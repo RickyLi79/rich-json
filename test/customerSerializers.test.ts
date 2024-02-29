@@ -1,7 +1,6 @@
+import { assert } from 'chai';
 import { describe } from 'mocha';
 import RichJson from '../src';
-import { assert } from 'chai';
-import { resetCustomerSerializers } from '../src/lib';
 
 
 describe('customerSerializers', () => {
@@ -29,7 +28,7 @@ describe('customerSerializers', () => {
   };
 
   beforeEach(() => {
-    resetCustomerSerializers();
+    RichJson.resetCustomerSerializers();
   });
   it('base', () => {
     RichJson.addCustomerSerializer({

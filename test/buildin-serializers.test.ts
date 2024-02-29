@@ -1,12 +1,10 @@
+import { assert } from 'chai';
 import { describe } from 'mocha';
 import RichJson from '../src';
-import { assert } from 'chai';
-import { resetCustomerSerializers } from '../src/lib';
-import { WrapRunner } from '../src/buildin-serializer/WrapRunner.Serializer';
 
 describe('buildin serializers', () => {
   beforeEach(() => {
-    resetCustomerSerializers();
+    RichJson.resetCustomerSerializers();
   });
   describe('Date', () => {
     it('plain', () => {
@@ -276,18 +274,18 @@ describe('buildin serializers', () => {
       function add(a:number, b:number) {
         return a + b;
       }
-      const expect = new WrapRunner(add, 1, 2);
+      const expect = new RichJson.WrapRunner(add, 1, 2);
       const actual = RichJson.clone(expect);
-      assert.instanceOf(actual, WrapRunner);
+      assert.instanceOf(actual, RichJson.WrapRunner);
       assert.deepEqual(actual.run(), 3);
     });
     it('plain #1 Promise', async () => {
       function add(a:number, b:number) {
         return Promise.resolve(a + b);
       }
-      const expect = new WrapRunner(add, 1, 2);
+      const expect = new RichJson.WrapRunner(add, 1, 2);
       const actual = RichJson.clone(expect);
-      assert.instanceOf(actual, WrapRunner);
+      assert.instanceOf(actual, RichJson.WrapRunner);
 
       const called = actual.run();
       assert.instanceOf(called, Promise);
@@ -299,9 +297,9 @@ describe('buildin serializers', () => {
         return (this ?? 0) + a + b;
       }
 
-      const expect = new WrapRunner(add, 1, 2);
+      const expect = new RichJson.WrapRunner(add, 1, 2);
       const actual = RichJson.clone(expect);
-      assert.instanceOf(actual, WrapRunner);
+      assert.instanceOf(actual, RichJson.WrapRunner);
 
       assert.deepEqual(actual.run(), 3);
       assert.deepEqual(actual.run(5), 8);

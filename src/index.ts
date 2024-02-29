@@ -5,7 +5,7 @@ import { WrapRunner } from './buildin-serializer/WrapRunner.Serializer';
 
 const clone = function <T>(obj: T): T {
   const text = stringify(obj);
-  const actual = parse(text);
+  const actual = parse<T>(text);
   return actual;
 };
 

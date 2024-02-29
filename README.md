@@ -1,15 +1,42 @@
 # @rickyli79/rich-json
-Serialize and Deserialize javascript objects
+serialize and deserialize rich javascript data types, suport reference data.
+
+## install
+```
+npm install @rickyli79/rich-json
+```
 
 ## usage
-```js
-const RichJson = require('@rickyli79/rich-json');
-const complexObj = {};
-const rJson = RichJson.stringify(complexObj);
-const complexObj2 = RichJson.parse(rJson);
-const complexObj3 = RichJson.clone(rJson);
+
+### supported runtime
+- NodeJS
+- Browser
+
+### stringify
+```typescript
+import RichJson from '@rickyli79/rich-json'
+// const RichJson = require('@rickyli79/rich-json');
+const complexObj_origin = { key: 'any supported data types' };
+const rJson:string = RichJson.stringify(complexObj_origin);
+// todo: save rJson to file;
 ```
-## support data types
+### parse
+```typescript
+import RichJson from '@rickyli79/rich-json'
+const rJson:string = getRichJsonText();
+const complexObj = RichJson.parse<TComplaxObj>(rJson);
+```
+
+### clone
+```typescript
+import RichJson from '@rickyli79/rich-json'
+const complexObj_origin = { key: 'any supported data types' };
+const complexObj = RichJson.clone(complexObj_origin);
+
+assert.notStrictEqual(complexObj, complexObj_origin);
+```
+
+## supported data types
 - primitive
   - null
   - undefined
@@ -17,15 +44,15 @@ const complexObj3 = RichJson.clone(rJson);
   - number
     - normal
     - `NaN`
-    - -0
+    - `-0`
     - `Number.EPSILON`
     - `Number.MAX_SAFE_INTEGER`
     - `Number.MIN_SAFE_INTEGER`
     - `Number.NEGATIVE_INFINITY`
     - `Number.POSITIVE_INFINITY`
-- Function
-  - Function
-  - async Function
+- function
+  - function
+  - async function
   - arrow function
   - async arrow function
 - object
@@ -34,17 +61,17 @@ const complexObj3 = RichJson.clone(rJson);
   - `RegExp`
   - `Set`
   - `Map`
-  - instanceof `Error` ( with `message` only, without `stack` )
+  - `Error` ( with `message` only, ~~without `stack`~~ )
   - Buffer like
-    - `Buffer` ***NodeJs***
+    - `Buffer` ***in NodeJs***
     - `Int8Arrany`, `Uint16Array`, `Uint32Array` ...and more
     - ~~NOT support `Blob`~~
-  - `WrapCaller` class
+  - `WrapRunner` class
   - customer serializers
-- special
+- reference
+  - reference to same object
   - circular reference
-
-
+  >including reference in `Set` and `Map`, and `WrapRunner` class or `customer serializers`
 
 ## unittest 
 - Report: https://rickyli79.github.io/rich-json/

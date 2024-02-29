@@ -1,7 +1,6 @@
+import { assert } from 'chai';
 import { describe } from 'mocha';
 import RichJson from '../src';
-import { assert } from 'chai';
-import { resetCustomerSerializers } from '../src/lib';
 
 
 describe('complex', () => {
@@ -56,7 +55,7 @@ describe('complex', () => {
   let actual: typeof expect;
 
   beforeEach(() => {
-    resetCustomerSerializers();
+    RichJson.resetCustomerSerializers();
   });
   beforeEach(() => {
     actual = RichJson.clone(expect);

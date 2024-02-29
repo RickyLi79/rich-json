@@ -101,7 +101,7 @@ function fromRich(value: any, root: any, nativeKeys: NativeKeys): any {
   return value;
 }
 
-export function parse(text: string): any {
+export function parse<T>(text: string): T {
   
   buildinSerializers = getBuildinSerializers();
   try {

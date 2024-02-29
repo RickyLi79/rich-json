@@ -1,13 +1,12 @@
+import { assert } from 'chai';
 import { describe } from 'mocha';
 import RichJson from '../src';
-import { assert } from 'chai';
-import { resetCustomerSerializers } from '../src/lib';
 
 
 describe('primitive', () => {
 
   beforeEach(() => {
-    resetCustomerSerializers();
+    RichJson.resetCustomerSerializers();
   });
   describe('null', () => {
     it('plain', () => {
