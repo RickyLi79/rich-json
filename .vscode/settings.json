@@ -1,0 +1,5 @@
+{
+  "files.exclude": {
+   "pack/**/*.{js,js.map}": true
+  }
+}
