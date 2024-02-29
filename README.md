@@ -46,4 +46,6 @@ const complexObj3 = RichJson.clone(rJson);
 
 
 
-## 
+## unittest 
+- Report: https://rickyli79.github.io/rich-json/
+- [test files](./test/)
