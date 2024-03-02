@@ -7,8 +7,21 @@ import { WrapRunnerSerializer } from './buildin-serializer/WrapRunner.Serializer
 import { URLSerializer } from './buildin-serializer/URL.Serializer';
 import { ErrorSerializer } from './buildin-serializer/Error.Serializer';
 
-export const isBrowser = typeof window !== 'undefined';
-export const isNodeJs = typeof process !== 'undefined';
+function getIsNodejs() {
+  return (typeof process !== 'undefined')
+    && (Object.prototype.toString.call(process) === '[object process]')
+    && (!!(process.versions && process.versions.node));
+}
+export const isNodeJs = getIsNodejs();
+
+function getIsBrowser() {
+  return (typeof window !== 'undefined')
+    && (Object.prototype.toString.call(window) === '[object Window]')
+    && (typeof window.alert === 'function')
+    && (typeof window.console === 'object')
+  ;
+}
+export const isBrowser = getIsBrowser();
 
 export type ClassSpy<T extends object = object> = Function & { prototype: T };
 export type InstanceTypeSpy<TClass> = InstanceType<{ new(): never } & TClass>;
