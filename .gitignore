@@ -1,7 +1,2 @@
 node_modules
 bin
-bin-test
-bin-pack
-pack/**/*.js
-pack/**/*.js.map
-backup
