@@ -1,11 +1,15 @@
 import type { SetOptional } from 'type-fest';
+import { BigIntSerializer } from './buildin-serializer/BigInt.Serializer';
 import { DateSerializer } from './buildin-serializer/Date.Serializer';
-import { SetSerializer } from './buildin-serializer/Set.Serializer';
-import { MapSerializer } from './buildin-serializer/Map.Serializer';
-import { RegExpSerializer } from './buildin-serializer/RegExp.Serializer';
-import { WrapRunnerSerializer } from './buildin-serializer/WrapRunner.Serializer';
-import { URLSerializer } from './buildin-serializer/URL.Serializer';
 import { ErrorSerializer } from './buildin-serializer/Error.Serializer';
+import { FunctionSerializer } from './buildin-serializer/Function.Serializer';
+import { MapSerializer } from './buildin-serializer/Map.Serializer';
+import { NumberSerializer } from './buildin-serializer/Number.Serializer';
+import { RegExpSerializer } from './buildin-serializer/RegExp.Serializer';
+import { SetSerializer } from './buildin-serializer/Set.Serializer';
+import { URLSerializer } from './buildin-serializer/URL.Serializer';
+import { WrapRunnerSerializer } from './buildin-serializer/WrapRunner.Serializer';
+import { BufferSerializer } from './buildin-serializer/Buffer.Serializer';
 
 function getIsNodejs() {
   return (typeof process !== 'undefined')
@@ -78,7 +82,7 @@ export function calMarkId(value: object, nativeKeys: NativeKeys, usedMark: strin
 export type CustomerSerializer<T extends ClassSpy, TContent = any> = {
   className: string,
   class: T;
-  toContent(value: InstanceTypeSpy<T>): TContent;
+  toContent(value: InstanceTypeSpy<T>, isPlainContent: () => void): TContent;
   fromContent(content: TContent): InstanceTypeSpy<T>;
   isType(value: any): value is InstanceTypeSpy<T>;
 
@@ -125,7 +129,11 @@ export function resetSerializer() {
 
 export function getBuildinSerializers(): CustomerSerializer<ClassSpy, any>[] {
   return [
+    BigIntSerializer.getInstance(),
+    NumberSerializer.getInstance(),
+    FunctionSerializer.getInstance(),
     DateSerializer.getInstance(),
+    BufferSerializer.getInstance(),
     URLSerializer.getInstance(),
     SetSerializer.getInstance(),
     MapSerializer.getInstance(),

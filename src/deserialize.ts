@@ -1,6 +1,6 @@
 import jsonpath from 'jsonpath';
 import { type ClassSpy, type CustomerSerializer, type NativeKeys, getBuildinSerializers, getNativeKeys, isNativeProperty, isNodeJs, customerSerializers } from './lib';
-type RichTypes = 'Number' | 'Function' | 'BigInt' | 'Buffer' | 'Class' | '$ref';
+type RichTypes = 'Class' | '$ref';
 const refMap: Map<any, any> = new Map();
 
 let buildinSerializers:CustomerSerializer<ClassSpy, any>[];
@@ -17,27 +17,6 @@ function fromRich(value: any, root: any, nativeKeys: NativeKeys): any {
   if (!isNativeProperty(value, nativeKeys)) return value;
   const { type, content, className } = getRichlValue(value, nativeKeys);
   switch (type) {
-    case 'Function':
-      {
-        let func: any;
-        try {
-          func = eval(`(${content})`);
-        } catch (e) {
-          const tmp = eval(`({${content}})`);
-          func = tmp[Object.keys(tmp)[0]];
-        }
-        return func;
-      }
-      break;
-
-    case 'BigInt':
-      return BigInt(content);
-      break;
-
-    case 'Number':
-      if (content === '-0') return -0;
-      return Number[content];
-      break;
 
     case '$ref':
       {
@@ -63,22 +42,6 @@ function fromRich(value: any, root: any, nativeKeys: NativeKeys): any {
           refMap.set(content, refObj);
         }
         return refObj;
-      }
-      break;
-
-    case 'Buffer':
-      {
-        let buffer: any;
-        if (className === 'Buffer') {
-          if (isNodeJs) {
-            buffer = Buffer.from(content);
-          } else {
-            buffer = new Uint8Array(content);
-          }
-        } else {
-          buffer = new (eval(className) as any)(new TextEncoder().encode(content));
-        }
-        return buffer;
       }
       break;
 

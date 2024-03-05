@@ -21,7 +21,7 @@ let nativeKeys:NativeKeys;
 let usedMark:string[];
 let buildinSerializers:CustomerSerializer<ClassSpy, any>[];
 
-type RichTypes = 'Number' | 'Function' | 'BigInt' | 'Buffer' | 'Class' | '$ref';
+type RichTypes = 'Class' | '$ref';
 function createRichValue<Type extends RichTypes, Content = any>(s: RichJson<Type, Content>): any {
   if (typeof s.content === 'object') {
     if (s.serializContent) {
@@ -43,59 +43,6 @@ function isNativeProperty(value: any): boolean {
   return typeof value === 'object' && value?.[MARK] === MARK;
 }
 
-function toRichFunc(value: (...args: any[]) => any) {
-  const c = value.toString();
-  return createRichValue({
-    raw: value,
-    type: 'Function',
-    content: c,
-  });
-}
-
-const NumberStaticsKeys = [ 'EPSILON', 'MAX_SAFE_INTEGER', 'MAX_VALUE', 'MIN_SAFE_INTEGER', 'MIN_VALUE', 'NEGATIVE_INFINITY', 'POSITIVE_INFINITY' ]; 
-function toRichNumber(value: number) {
-  if (Number.isNaN(value)) {
-    return createRichValue({
-      raw: value,
-      type: 'Number',
-      content: 'NaN',
-    });
-  }
-  if (Object.is(value, -0)) {
-    return createRichValue({
-      raw: value,
-      type: 'Number',
-      content: '-0',
-    });
-  }
-  for (const i of NumberStaticsKeys) {
-    const n:number = Number[i];
-    if (value === n) {
-      return createRichValue({
-        raw: value,
-        type: 'Number',
-        content: i,
-      });
-    }
-  }
-  return value;
-}
-function toRichBigint(value: bigint) {
-  return createRichValue({
-    raw: value,
-    type: 'BigInt',
-    content: value.toString(),
-  });
-}
-function toRichBuffer(value: ArrayBuffer | Uint8Array) {
-  const __class__ = value.constructor.name;
-  return createRichValue({
-    raw: value,
-    type: 'Buffer',
-    className: __class__,
-    content: String.fromCharCode.apply(null, value),
-  });
-}
 function toRichRef(ref: string[]) {
   return createRichValue({
     raw: undefined,
@@ -106,7 +53,13 @@ function toRichRef(ref: string[]) {
 
 function toRichClass<T extends ClassSpy>(value: InstanceTypeSpy<T>, serializer: CustomerSerializer<T>) {
   const className = serializer.className;
-  const content = serializer.toContent(value);
+  let isPlainContent = false;
+  const content = serializer.toContent(value, () => {
+    isPlainContent = true;
+  });
+  if (isPlainContent) {
+    return content;
+  }
   return createRichValue({
     raw: value,
     className,
@@ -117,42 +70,21 @@ function toRichClass<T extends ClassSpy>(value: InstanceTypeSpy<T>, serializer: 
 }
 
 function nativeReplacer(this: any, key: string, value: any, map: Map<any, string[]>, fullpath: string[]): any {
-  const type = typeof (value);
-  if (value === Object(value)) map.set(value, fullpath);
-  if (type === 'function' && serializer.Function) {
-    return toRichFunc(value);
-  } else if (type === 'number') {
-    return toRichNumber(value);
-  } else if (type === 'bigint') {
-    return toRichBigint(value);
-  } else if (type === 'object' && type !== null) {
-    if (serializer.Buffer) {
-      let isBuffer = false;
-      if (isNodeJs) {
-        if (value instanceof Buffer) {
-          isBuffer = true;
-        }
-      }
-
-      if (value instanceof ArrayBuffer || value?.buffer instanceof ArrayBuffer) {
-        isBuffer = true;
-      }
-      if (isBuffer) {
-        return toRichBuffer(value);
-      }
+  if (value === null || value === undefined || typeof value === 'string') return value;
+  const boxedValue = Object(value);
+  const type = typeof (boxedValue);
+  if (value === boxedValue) map.set(value, fullpath);
+  calMarkId(value, nativeKeys, usedMark);
+  for (const i in customerSerializers) {
+    const iConverter = customerSerializers[i];
+    if (iConverter.isType(value)) {
+      return toRichClass(value, iConverter);
     }
-    calMarkId(value, nativeKeys, usedMark);
-    for (const i in customerSerializers) {
-      const iConverter = customerSerializers[i];
-      if (iConverter.isType(value)) {
-        return toRichClass(value, iConverter);
-      }
-    }
-    for (const i in buildinSerializers) {
-      const iConverter = buildinSerializers[i];
-      if (iConverter.isType(value)) {
-        return toRichClass(value, iConverter);
-      }
+  }
+  for (const i in buildinSerializers) {
+    const iConverter = buildinSerializers[i];
+    if (iConverter.isType(boxedValue)) {
+      return toRichClass(boxedValue, iConverter);
     }
   }
   return value;
