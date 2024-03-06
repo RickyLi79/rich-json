@@ -1,4 +1,4 @@
-import { type ClassSpy, type InstanceTypeSpy, type CustomerSerializer, serializer, isNodeJs, customerSerializers, getNativeKeys, calMarkId, getMarkKey, type NativeKeys, getBuildinSerializers } from './lib';
+import { type ClassSpy, type InstanceTypeSpy, type CustomerSerializer, serializer, isNodeJs, customerSerializers, getNativeKeys, calMarkId, getMarkKey, type NativeKeys, getBuildinSerializers, isBrowser } from './lib';
 
 type RichJson<Type extends RichTypes, Content = any> = {
   raw: any,
@@ -17,9 +17,9 @@ const MARK = Symbol('mark');
 const IGNORE = Symbol('ignore');
 
 let NATIVE_MARK: string;
-let nativeKeys:NativeKeys;
-let usedMark:string[];
-let buildinSerializers:CustomerSerializer<ClassSpy, any>[];
+let nativeKeys: NativeKeys;
+let usedMark: string[];
+let buildinSerializers: CustomerSerializer<ClassSpy, any>[];
 
 type RichTypes = 'Class' | '$ref';
 function createRichValue<Type extends RichTypes, Content = any>(s: RichJson<Type, Content>): any {
@@ -39,6 +39,16 @@ function createRichValue<Type extends RichTypes, Content = any>(s: RichJson<Type
   };
 }
 
+function randomUUID() {
+  if (isNodeJs) {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const crypto:Crypto = require('crypto');
+    return crypto.randomUUID();
+  } else if (isBrowser) {
+    return crypto.randomUUID();
+  }
+}
+
 function isNativeProperty(value: any): boolean {
   return typeof value === 'object' && value?.[MARK] === MARK;
 }
@@ -47,7 +57,8 @@ function toRichRef(ref: string[]) {
   return createRichValue({
     raw: undefined,
     type: '$ref',
-    content: JSON.stringify(ref),
+    content: ref,
+    serializContent: false,
   });
 }
 
@@ -72,7 +83,6 @@ function toRichClass<T extends ClassSpy>(value: InstanceTypeSpy<T>, serializer: 
 function nativeReplacer(this: any, key: string, value: any, map: Map<any, string[]>, fullpath: string[]): any {
   if (value === null || value === undefined || typeof value === 'string') return value;
   const boxedValue = Object(value);
-  const type = typeof (boxedValue);
   if (value === boxedValue) map.set(value, fullpath);
   calMarkId(value, nativeKeys, usedMark);
   for (const i in customerSerializers) {
@@ -90,16 +100,24 @@ function nativeReplacer(this: any, key: string, value: any, map: Map<any, string
   return value;
 }
 
-export function stringify(value: any, pretty?: string | number): string {
+type Arrayable<T> = T | T[];
+export type StringifyOptions = {
+  pretty?: string | number,
+  // stable?: boolean,
+  excludKeys?: Arrayable<string | RegExp>;
+};
+
+export function stringify(value: any, options?: StringifyOptions): string {
+  const { pretty, excludKeys = [] } = options ?? {};
+  const _excludKeys: (string | RegExp)[] = Array.isArray(excludKeys) ? excludKeys : [ excludKeys ];
   const root = value;
   const map: Map<any, string[]> = new Map();
   const toJsonMap: Map<{ prototype: { toJSON: any } }, any> = new Map();
-  NATIVE_MARK = Math.random() + '-MARK-' + Date.now();
+  NATIVE_MARK = '-MARK-' + Math.random() + Date.now() + randomUUID();
   const SP = '#';
   nativeKeys = getNativeKeys(SP);
   usedMark = [];
   try {
-    // initConfig();
     buildinSerializers = getBuildinSerializers();
     buildinSerializers.forEach(iSerializer => {
       toJsonMap.set(iSerializer.class, iSerializer.class.prototype.toJSON);
@@ -123,7 +141,6 @@ export function stringify(value: any, pretty?: string | number): string {
         return this as any;
       };
     });
-    // map.set(root, [ '$' ]);
     const wrap = {
       [MARK]: MARK,
       MARK: NATIVE_MARK,
@@ -135,6 +152,16 @@ export function stringify(value: any, pretty?: string | number): string {
       const include = this[MARK] ?? true;
       if (!include) return;
       if (value === undefined) return;
+      if (_excludKeys.some(i => {
+        if (i instanceof RegExp) {
+          return i.test(key);
+        }
+        return i === key;
+      })) {
+        return;
+      }
+      if (value === null || typeof value === 'string') return value;
+      
       let fullpath: string[];
       const hasMark = isNativeProperty(this);
       if (Object.is(value, root)) {
@@ -153,7 +180,7 @@ export function stringify(value: any, pretty?: string | number): string {
       clazz.prototype.toJSON = toJSON;
     }
     let nextMarkId = 0;
-    let markKey:string;
+    let markKey: string;
     do {
       markKey = getMarkKey(nextMarkId++, nativeKeys.sp);
     } while (usedMark.includes(markKey));

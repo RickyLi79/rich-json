@@ -71,7 +71,7 @@ assert.notStrictEqual(complexObj, complexObj_origin);
 - reference
   - reference to same object
   - circular reference
-  >including reference in `Set` and `Map`, and `WrapRunner` class or `customer serializers`
+  > including reference in `Set` and `Map`, and `WrapRunner` class or `customer serializers`
 
 ## unittest 
 - Report: https://rickyli79.github.io/rich-json/

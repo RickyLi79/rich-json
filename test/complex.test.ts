@@ -56,6 +56,18 @@ describe('complex', () => {
 
   beforeEach(() => {
     RichJson.resetCustomerSerializers();
+    
+    RichJson.addCustomerSerializer({
+      className: 'abc',
+      class: MyClass,
+      toContent: value => ({ 
+        abc: value.data, 
+        xyz: value.ref, 
+      }),
+      fromContent: ({ abc, xyz }) => {
+        return MyClass.create(abc, xyz);
+      },
+    });
   });
   beforeEach(() => {
     actual = RichJson.clone(expect);

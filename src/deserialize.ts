@@ -20,15 +20,16 @@ function fromRich(value: any, root: any, nativeKeys: NativeKeys): any {
 
     case '$ref':
       {
-        let refObj = refMap.get(content);
+        const contentStr = JSON.stringify(content);
+        let refObj = refMap.get(contentStr);
         if (refObj === undefined) {
-          const jp: string[] = JSON.parse(content);
+          const jp: string[] = [ ...content ];
           refObj = jsonpath.value(root, jsonpath.stringify(jp));
           if (refObj === undefined) {
             refObj = root;
             jp.shift();
             while (jp.length !== 0) {
-              refObj = jsonpath.value(root, jsonpath.stringify([ '$', jp.shift() ]));
+              refObj = jsonpath.value(refObj, jsonpath.stringify([ '$', jp.shift() ]));
               if (refObj instanceof Map) {
                 const v = jp.pop();
                 const k = jp.pop();
@@ -39,7 +40,7 @@ function fromRich(value: any, root: any, nativeKeys: NativeKeys): any {
               }
             }
           }
-          refMap.set(content, refObj);
+          refMap.set(contentStr, refObj);
         }
         return refObj;
       }

@@ -2,20 +2,17 @@ import { type CustomerSerializer, createCustomerSerializer } from '../lib';
 
 
 export class ErrorSerializer {
-  private static instance:CustomerSerializer<typeof Error, {name:string, message:string}>;
+  private static instance: CustomerSerializer<typeof Error, [string, string]>;
   public static getInstance() {
     if (this.instance === undefined) {
       this.instance = createCustomerSerializer({
         class: Error,
         toContent(value) {
-          return {
-            name: value.name,
-            message: value.message,
-          };
+          return [ value.name, value.message ];
         },
-        fromContent(content) {
-          const err:Error = eval(`new ${content.name}()`);
-          err.message = content.message;
+        fromContent([ name, message ]) {
+          const err: Error = eval(`new ${name}()`);
+          err.message = message;
           return err;
         },
         serializContent: false,

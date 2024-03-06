@@ -10,8 +10,8 @@ export class SetSerializer {
         toContent(value) {
           return Array.from(value);
         },
-        fromContent(contwnt) {
-          return new Set(contwnt);
+        fromContent(content) {
+          return new Set(content);
         },
         serializContent: true,
       });

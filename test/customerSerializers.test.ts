@@ -34,7 +34,9 @@ describe('customerSerializers', () => {
     RichJson.addCustomerSerializer({
       className: 'abc',
       class: MyClass,
-      toContent: value => ({ abc: value.data }),
+      toContent: value => ({ 
+        abc: value.data, 
+      }),
       fromContent: json => {
         return MyClass.create(json.abc);
       },
