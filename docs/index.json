@@ -5,9 +5,9 @@
     "passes": 72,
     "pending": 0,
     "failures": 0,
-    "start": "2024-03-07T16:51:36.782Z",
-    "end": "2024-03-07T16:51:36.836Z",
-    "duration": 54,
+    "start": "2024-03-07T16:54:39.813Z",
+    "end": "2024-03-07T16:54:39.872Z",
+    "duration": 59,
     "testsRegistered": 72,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "8e4da18e-c629-4fdd-ba46-00a09bd54ea9",
+      "uuid": "dbfa0df2-a120-4df8-9c85-5bd212616c6b",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "a304faea-8384-4d7c-b100-448a142cdedb",
+          "uuid": "0cb9e77b-bda7-4b6a-8462-a5d9dd241f1a",
           "title": "buildin serializers",
           "fullFile": "D:\\works\\ts-project\\rich-json\\test\\buildin-serializers.test.ts",
           "file": "\\test\\buildin-serializers.test.ts",
@@ -45,8 +45,8 @@
               "context": null,
               "code": "src_1.default.resetCustomerSerializers();",
               "err": {},
-              "uuid": "3219407d-1712-4154-b17d-a6a5aece55cf",
-              "parentUUID": "a304faea-8384-4d7c-b100-448a142cdedb",
+              "uuid": "5475f765-a4dc-4bfc-8b15-369505d07dee",
+              "parentUUID": "0cb9e77b-bda7-4b6a-8462-a5d9dd241f1a",
               "isHook": true,
               "skipped": false
             }
@@ -55,7 +55,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "95c6740c-ce33-4b7a-bb95-e2aadc472ef1",
+              "uuid": "69d402df-8fba-4918-bc64-e137cfddd4c8",
               "title": "Date",
               "fullFile": "D:\\works\\ts-project\\rich-json\\test\\buildin-serializers.test.ts",
               "file": "\\test\\buildin-serializers.test.ts",
@@ -75,8 +75,8 @@
                   "context": null,
                   "code": "const expect = new Date();\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual, expect);\nchai_1.assert.notStrictEqual(actual, expect);\nchai_1.assert.instanceOf(actual, Date);",
                   "err": {},
-                  "uuid": "c66cc04d-3fed-4306-8f13-2ac8bdb39cb1",
-                  "parentUUID": "95c6740c-ce33-4b7a-bb95-e2aadc472ef1",
+                  "uuid": "d0a9d7e1-aa49-4eb2-9aa4-94548a36e040",
+                  "parentUUID": "69d402df-8fba-4918-bc64-e137cfddd4c8",
                   "isHook": false,
                   "skipped": false
                 },
@@ -93,16 +93,16 @@
                   "context": null,
                   "code": "const expect = { a: new Date() };\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual, expect);\nchai_1.assert.notStrictEqual(actual.a, expect.a);\nchai_1.assert.instanceOf(actual.a, Date);",
                   "err": {},
-                  "uuid": "1559acfd-16d4-4d0d-bd8d-2c3eb692e78c",
-                  "parentUUID": "95c6740c-ce33-4b7a-bb95-e2aadc472ef1",
+                  "uuid": "5a922cbe-24a2-4ec7-90dd-c3b1b1cd6838",
+                  "parentUUID": "69d402df-8fba-4918-bc64-e137cfddd4c8",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "c66cc04d-3fed-4306-8f13-2ac8bdb39cb1",
-                "1559acfd-16d4-4d0d-bd8d-2c3eb692e78c"
+                "d0a9d7e1-aa49-4eb2-9aa4-94548a36e040",
+                "5a922cbe-24a2-4ec7-90dd-c3b1b1cd6838"
               ],
               "failures": [],
               "pending": [],
@@ -113,7 +113,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "9114a3cc-3e07-4dac-8eff-968ca0cb8d1b",
+              "uuid": "0913104f-65a3-4a13-a642-a6c436f5cbcb",
               "title": "URL",
               "fullFile": "D:\\works\\ts-project\\rich-json\\test\\buildin-serializers.test.ts",
               "file": "\\test\\buildin-serializers.test.ts",
@@ -133,8 +133,8 @@
                   "context": null,
                   "code": "const expect = new URL('http://abc.def?q=1&3#213');\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual, expect);\nchai_1.assert.notStrictEqual(actual, expect);\nchai_1.assert.instanceOf(actual, URL);",
                   "err": {},
-                  "uuid": "40842183-2d7b-40bf-b004-fb0c9b812745",
-                  "parentUUID": "9114a3cc-3e07-4dac-8eff-968ca0cb8d1b",
+                  "uuid": "2b49c24a-5fe5-4bc1-a9d2-34d66a751363",
+                  "parentUUID": "0913104f-65a3-4a13-a642-a6c436f5cbcb",
                   "isHook": false,
                   "skipped": false
                 },
@@ -151,16 +151,16 @@
                   "context": null,
                   "code": "const expect = { a: new Date() };\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual, expect);\nchai_1.assert.notStrictEqual(actual.a, expect.a);\nchai_1.assert.instanceOf(actual.a, Date);",
                   "err": {},
-                  "uuid": "2a8ede2d-e605-499e-b07a-cd73b5e995a0",
-                  "parentUUID": "9114a3cc-3e07-4dac-8eff-968ca0cb8d1b",
+                  "uuid": "c5df5dba-9b8c-4e41-981a-e2a09320d23c",
+                  "parentUUID": "0913104f-65a3-4a13-a642-a6c436f5cbcb",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "40842183-2d7b-40bf-b004-fb0c9b812745",
-                "2a8ede2d-e605-499e-b07a-cd73b5e995a0"
+                "2b49c24a-5fe5-4bc1-a9d2-34d66a751363",
+                "c5df5dba-9b8c-4e41-981a-e2a09320d23c"
               ],
               "failures": [],
               "pending": [],
@@ -171,7 +171,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "7b16b129-d6d6-4e55-83ab-8c103d3bc16c",
+              "uuid": "3aee6c5d-7dda-4acf-9829-9c9bdf608f2d",
               "title": "Error",
               "fullFile": "D:\\works\\ts-project\\rich-json\\test\\buildin-serializers.test.ts",
               "file": "\\test\\buildin-serializers.test.ts",
@@ -182,7 +182,7 @@
                   "title": "#1",
                   "fullTitle": "buildin serializers Error #1",
                   "timedOut": false,
-                  "duration": 1,
+                  "duration": 0,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -191,8 +191,8 @@
                   "context": null,
                   "code": "const expect = new Error('my message');\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual.name, expect.name);\nchai_1.assert.deepEqual(actual.message, expect.message);\nchai_1.assert.notStrictEqual(actual, expect);\nchai_1.assert.instanceOf(actual, Error);",
                   "err": {},
-                  "uuid": "4a45653c-5554-4add-8e86-0f8a714c457f",
-                  "parentUUID": "7b16b129-d6d6-4e55-83ab-8c103d3bc16c",
+                  "uuid": "9cc325b9-c67c-4db3-a8bf-44ce14d8df28",
+                  "parentUUID": "3aee6c5d-7dda-4acf-9829-9c9bdf608f2d",
                   "isHook": false,
                   "skipped": false
                 },
@@ -209,27 +209,27 @@
                   "context": null,
                   "code": "let expect;\ntry {\n    ({}.a.b.c = 1);\n}\ncatch (e) {\n    expect = e;\n}\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual.name, expect.name);\nchai_1.assert.deepEqual(actual.message, expect.message);\nchai_1.assert.notStrictEqual(actual, expect);\nchai_1.assert.instanceOf(actual, TypeError);",
                   "err": {},
-                  "uuid": "e8bbb0f5-f458-4ac4-8ca5-66be2698d00c",
-                  "parentUUID": "7b16b129-d6d6-4e55-83ab-8c103d3bc16c",
+                  "uuid": "dabaa5d1-f53f-41ff-a550-baa4475a6522",
+                  "parentUUID": "3aee6c5d-7dda-4acf-9829-9c9bdf608f2d",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "4a45653c-5554-4add-8e86-0f8a714c457f",
-                "e8bbb0f5-f458-4ac4-8ca5-66be2698d00c"
+                "9cc325b9-c67c-4db3-a8bf-44ce14d8df28",
+                "dabaa5d1-f53f-41ff-a550-baa4475a6522"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 1,
+              "duration": 0,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "1c170c38-15f4-4f56-9785-76e3349e080a",
+              "uuid": "cba01686-b876-4813-973c-b91db83ffd70",
               "title": "RegExp",
               "fullFile": "D:\\works\\ts-project\\rich-json\\test\\buildin-serializers.test.ts",
               "file": "\\test\\buildin-serializers.test.ts",
@@ -249,8 +249,8 @@
                   "context": null,
                   "code": "const expect = /RegExp/;\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual, expect);\nchai_1.assert.notStrictEqual(actual, expect);\nchai_1.assert.instanceOf(actual, RegExp);",
                   "err": {},
-                  "uuid": "6c1e53ef-2c91-4366-af94-276065150c1a",
-                  "parentUUID": "1c170c38-15f4-4f56-9785-76e3349e080a",
+                  "uuid": "a07a143c-b119-4b45-8f36-50365d0c2a82",
+                  "parentUUID": "cba01686-b876-4813-973c-b91db83ffd70",
                   "isHook": false,
                   "skipped": false
                 },
@@ -258,7 +258,7 @@
                   "title": "plain with flag",
                   "fullTitle": "buildin serializers RegExp plain with flag",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -267,8 +267,8 @@
                   "context": null,
                   "code": "const expect = /RegExp/ig;\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual, expect);\nchai_1.assert.notStrictEqual(actual, expect);\nchai_1.assert.instanceOf(actual, RegExp);",
                   "err": {},
-                  "uuid": "9c000f5d-9414-4c1c-bcc4-e5b0d7abe54d",
-                  "parentUUID": "1c170c38-15f4-4f56-9785-76e3349e080a",
+                  "uuid": "1e10a950-874f-4c13-a771-a8aa9ba6a897",
+                  "parentUUID": "cba01686-b876-4813-973c-b91db83ffd70",
                   "isHook": false,
                   "skipped": false
                 },
@@ -285,75 +285,17 @@
                   "context": null,
                   "code": "const expect = { a: /RegExp/ };\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual, expect);\nchai_1.assert.notStrictEqual(actual.a, expect.a);\nchai_1.assert.instanceOf(actual.a, RegExp);",
                   "err": {},
-                  "uuid": "5945b49f-07f0-44e3-8077-494e40170924",
-                  "parentUUID": "1c170c38-15f4-4f56-9785-76e3349e080a",
+                  "uuid": "38f34bdd-1dce-4232-ab42-69c1daa5a157",
+                  "parentUUID": "cba01686-b876-4813-973c-b91db83ffd70",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "6c1e53ef-2c91-4366-af94-276065150c1a",
-                "9c000f5d-9414-4c1c-bcc4-e5b0d7abe54d",
-                "5945b49f-07f0-44e3-8077-494e40170924"
-              ],
-              "failures": [],
-              "pending": [],
-              "skipped": [],
-              "duration": 0,
-              "root": false,
-              "rootEmpty": false,
-              "_timeout": 2000
-            },
-            {
-              "uuid": "a3365eac-c799-4f37-9f0a-38f4d9325022",
-              "title": "Set",
-              "fullFile": "D:\\works\\ts-project\\rich-json\\test\\buildin-serializers.test.ts",
-              "file": "\\test\\buildin-serializers.test.ts",
-              "beforeHooks": [],
-              "afterHooks": [],
-              "tests": [
-                {
-                  "title": "plain",
-                  "fullTitle": "buildin serializers Set plain",
-                  "timedOut": false,
-                  "duration": 1,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
-                  "pending": false,
-                  "context": null,
-                  "code": "const expect = new Set([1, 2, 3]);\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual, expect);\nchai_1.assert.notStrictEqual(actual, expect);\nchai_1.assert.instanceOf(actual, Set);",
-                  "err": {},
-                  "uuid": "55cb09af-5329-40f1-a692-023faa69c3c2",
-                  "parentUUID": "a3365eac-c799-4f37-9f0a-38f4d9325022",
-                  "isHook": false,
-                  "skipped": false
-                },
-                {
-                  "title": "obj",
-                  "fullTitle": "buildin serializers Set obj",
-                  "timedOut": false,
-                  "duration": 0,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
-                  "pending": false,
-                  "context": null,
-                  "code": "const expect = { a: new Set([1, 2, 3]) };\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual, expect);\nchai_1.assert.notStrictEqual(actual.a, expect.a);\nchai_1.assert.instanceOf(actual.a, Set);",
-                  "err": {},
-                  "uuid": "647d8e29-8f37-406d-b055-5c9ff740d377",
-                  "parentUUID": "a3365eac-c799-4f37-9f0a-38f4d9325022",
-                  "isHook": false,
-                  "skipped": false
-                }
-              ],
-              "suites": [],
-              "passes": [
-                "55cb09af-5329-40f1-a692-023faa69c3c2",
-                "647d8e29-8f37-406d-b055-5c9ff740d377"
+                "a07a143c-b119-4b45-8f36-50365d0c2a82",
+                "1e10a950-874f-4c13-a771-a8aa9ba6a897",
+                "38f34bdd-1dce-4232-ab42-69c1daa5a157"
               ],
               "failures": [],
               "pending": [],
@@ -364,7 +306,65 @@
               "_timeout": 2000
             },
             {
-              "uuid": "1a1af7a3-c934-42f9-bfb8-bd486bef2c62",
+              "uuid": "4bfdf5b0-aee9-4106-a2fc-30fd47cd3383",
+              "title": "Set",
+              "fullFile": "D:\\works\\ts-project\\rich-json\\test\\buildin-serializers.test.ts",
+              "file": "\\test\\buildin-serializers.test.ts",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "plain",
+                  "fullTitle": "buildin serializers Set plain",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const expect = new Set([1, 2, 3]);\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual, expect);\nchai_1.assert.notStrictEqual(actual, expect);\nchai_1.assert.instanceOf(actual, Set);",
+                  "err": {},
+                  "uuid": "17dbe6aa-f12a-4db9-a3a0-2d3be9088d94",
+                  "parentUUID": "4bfdf5b0-aee9-4106-a2fc-30fd47cd3383",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "obj",
+                  "fullTitle": "buildin serializers Set obj",
+                  "timedOut": false,
+                  "duration": 1,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const expect = { a: new Set([1, 2, 3]) };\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual, expect);\nchai_1.assert.notStrictEqual(actual.a, expect.a);\nchai_1.assert.instanceOf(actual.a, Set);",
+                  "err": {},
+                  "uuid": "126e421a-601a-4e9a-8a73-20ab13e259c1",
+                  "parentUUID": "4bfdf5b0-aee9-4106-a2fc-30fd47cd3383",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "17dbe6aa-f12a-4db9-a3a0-2d3be9088d94",
+                "126e421a-601a-4e9a-8a73-20ab13e259c1"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 1,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "6c6b705e-e3fa-446b-be0d-f59379b5ea3e",
               "title": "Map",
               "fullFile": "D:\\works\\ts-project\\rich-json\\test\\buildin-serializers.test.ts",
               "file": "\\test\\buildin-serializers.test.ts",
@@ -384,8 +384,8 @@
                   "context": null,
                   "code": "const expect = new Map([[1, 2], [3, 4]]);\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual, expect);\nchai_1.assert.notStrictEqual(actual, expect);\nchai_1.assert.instanceOf(actual, Map);",
                   "err": {},
-                  "uuid": "dcef0088-dfc7-489c-85a5-1b17569c599a",
-                  "parentUUID": "1a1af7a3-c934-42f9-bfb8-bd486bef2c62",
+                  "uuid": "d317f685-5602-495c-9aae-7ffe814aaa57",
+                  "parentUUID": "6c6b705e-e3fa-446b-be0d-f59379b5ea3e",
                   "isHook": false,
                   "skipped": false
                 },
@@ -402,16 +402,16 @@
                   "context": null,
                   "code": "const expect = { a: new Map([[1, 2], [3, 4]]) };\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual, expect);\nchai_1.assert.notStrictEqual(actual.a, expect.a);\nchai_1.assert.instanceOf(actual.a, Map);",
                   "err": {},
-                  "uuid": "abdbad29-e6d8-4ecd-90b7-49935eb97c54",
-                  "parentUUID": "1a1af7a3-c934-42f9-bfb8-bd486bef2c62",
+                  "uuid": "56e315ea-a43e-4f76-a0ad-5571c82f55a8",
+                  "parentUUID": "6c6b705e-e3fa-446b-be0d-f59379b5ea3e",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "dcef0088-dfc7-489c-85a5-1b17569c599a",
-                "abdbad29-e6d8-4ecd-90b7-49935eb97c54"
+                "d317f685-5602-495c-9aae-7ffe814aaa57",
+                "56e315ea-a43e-4f76-a0ad-5571c82f55a8"
               ],
               "failures": [],
               "pending": [],
@@ -422,7 +422,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "752b43e0-407c-4071-94bc-1a96f54efc85",
+              "uuid": "91101b60-cdd5-4772-be5e-1de994d7c2b8",
               "title": "Function",
               "fullFile": "D:\\works\\ts-project\\rich-json\\test\\buildin-serializers.test.ts",
               "file": "\\test\\buildin-serializers.test.ts",
@@ -433,7 +433,7 @@
                   "title": "plain #1",
                   "fullTitle": "buildin serializers Function plain #1",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -442,8 +442,8 @@
                   "context": null,
                   "code": "const expect = function () { return 1; };\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual.toString(), expect.toString());\nchai_1.assert.notStrictEqual(actual, expect);\nchai_1.assert.instanceOf(actual, Function);",
                   "err": {},
-                  "uuid": "042e728b-a7e7-4e29-820a-c9fe2df112d8",
-                  "parentUUID": "752b43e0-407c-4071-94bc-1a96f54efc85",
+                  "uuid": "5f5af278-1833-4f26-be7b-f00e428e5c58",
+                  "parentUUID": "91101b60-cdd5-4772-be5e-1de994d7c2b8",
                   "isHook": false,
                   "skipped": false
                 },
@@ -460,8 +460,8 @@
                   "context": null,
                   "code": "const expect = async function () { return 1; };\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual.toString(), expect.toString());\nchai_1.assert.notStrictEqual(actual, expect);\nchai_1.assert.instanceOf(actual, Function);",
                   "err": {},
-                  "uuid": "b6015603-21bc-4b8f-be74-40130b55cf9a",
-                  "parentUUID": "752b43e0-407c-4071-94bc-1a96f54efc85",
+                  "uuid": "9faaa553-43ae-4eb4-b5c7-aa4f67c896fd",
+                  "parentUUID": "91101b60-cdd5-4772-be5e-1de994d7c2b8",
                   "isHook": false,
                   "skipped": false
                 },
@@ -478,8 +478,8 @@
                   "context": null,
                   "code": "const expect = () => { 0; };\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual.toString(), expect.toString());\nchai_1.assert.notStrictEqual(actual, expect);\nchai_1.assert.instanceOf(actual, Function);",
                   "err": {},
-                  "uuid": "b3567eef-9ced-4f04-aa98-1f0f719500b4",
-                  "parentUUID": "752b43e0-407c-4071-94bc-1a96f54efc85",
+                  "uuid": "561452e4-853a-4753-b09d-fc550ace6807",
+                  "parentUUID": "91101b60-cdd5-4772-be5e-1de994d7c2b8",
                   "isHook": false,
                   "skipped": false
                 },
@@ -496,8 +496,8 @@
                   "context": null,
                   "code": "const expect = async () => { 0; };\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual.toString(), expect.toString());\nchai_1.assert.notStrictEqual(actual, expect);\nchai_1.assert.instanceOf(actual, Function);",
                   "err": {},
-                  "uuid": "4af316f2-aa60-46bd-9f6f-5d379189a551",
-                  "parentUUID": "752b43e0-407c-4071-94bc-1a96f54efc85",
+                  "uuid": "0782c57d-11a1-4146-aae8-3032ec6f3657",
+                  "parentUUID": "91101b60-cdd5-4772-be5e-1de994d7c2b8",
                   "isHook": false,
                   "skipped": false
                 },
@@ -505,7 +505,7 @@
                   "title": "plain #3",
                   "fullTitle": "buildin serializers Function plain #3",
                   "timedOut": false,
-                  "duration": 1,
+                  "duration": 0,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -514,8 +514,8 @@
                   "context": null,
                   "code": "const expect = (a) => a;\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual.toString(), expect.toString());\nchai_1.assert.notStrictEqual(actual, expect);\nchai_1.assert.instanceOf(actual, Function);",
                   "err": {},
-                  "uuid": "7ff4e627-a0d4-4358-bb3c-3e22cf1b924b",
-                  "parentUUID": "752b43e0-407c-4071-94bc-1a96f54efc85",
+                  "uuid": "df178ec8-59a3-4514-851d-a78c10a56912",
+                  "parentUUID": "91101b60-cdd5-4772-be5e-1de994d7c2b8",
                   "isHook": false,
                   "skipped": false
                 },
@@ -532,8 +532,8 @@
                   "context": null,
                   "code": "const expect = async (a) => a;\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual.toString(), expect.toString());\nchai_1.assert.notStrictEqual(actual, expect);\nchai_1.assert.instanceOf(actual, Function);",
                   "err": {},
-                  "uuid": "0a23854e-64df-4814-97bf-e1c0ddb56c4b",
-                  "parentUUID": "752b43e0-407c-4071-94bc-1a96f54efc85",
+                  "uuid": "82686eb3-79f8-4c51-b5da-6d6c23fa3e44",
+                  "parentUUID": "91101b60-cdd5-4772-be5e-1de994d7c2b8",
                   "isHook": false,
                   "skipped": false
                 },
@@ -550,8 +550,8 @@
                   "context": null,
                   "code": "const expect = { a() { return 1; } };\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual.a.toString(), expect.a.toString());\nchai_1.assert.notStrictEqual(actual.a, expect.a);\nchai_1.assert.instanceOf(actual.a, Function);",
                   "err": {},
-                  "uuid": "c0dec3e1-597d-4758-aa04-31970d961381",
-                  "parentUUID": "752b43e0-407c-4071-94bc-1a96f54efc85",
+                  "uuid": "affa913a-625d-4a79-b1fc-867698a3d18e",
+                  "parentUUID": "91101b60-cdd5-4772-be5e-1de994d7c2b8",
                   "isHook": false,
                   "skipped": false
                 },
@@ -568,8 +568,8 @@
                   "context": null,
                   "code": "const expect = { async a() { return 1; } };\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual.a.toString(), expect.a.toString());\nchai_1.assert.notStrictEqual(actual.a, expect.a);\nchai_1.assert.instanceOf(actual.a, Function);",
                   "err": {},
-                  "uuid": "22880c4f-56ad-47ae-86db-13d213d30978",
-                  "parentUUID": "752b43e0-407c-4071-94bc-1a96f54efc85",
+                  "uuid": "dff82210-0f9c-4fab-a6a0-59eb8001d9ee",
+                  "parentUUID": "91101b60-cdd5-4772-be5e-1de994d7c2b8",
                   "isHook": false,
                   "skipped": false
                 },
@@ -586,8 +586,8 @@
                   "context": null,
                   "code": "const expect = { a: () => { 0; } };\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual.a.toString(), expect.a.toString());\nchai_1.assert.notStrictEqual(actual.a, expect.a);\nchai_1.assert.instanceOf(actual.a, Function);",
                   "err": {},
-                  "uuid": "822cb47f-821f-48d8-8f9b-09a42d593d06",
-                  "parentUUID": "752b43e0-407c-4071-94bc-1a96f54efc85",
+                  "uuid": "9aa95c8d-ea3f-4c3c-92b0-dfedec5aa74e",
+                  "parentUUID": "91101b60-cdd5-4772-be5e-1de994d7c2b8",
                   "isHook": false,
                   "skipped": false
                 },
@@ -604,8 +604,8 @@
                   "context": null,
                   "code": "const expect = { a: async () => { 0; } };\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual.a.toString(), expect.a.toString());\nchai_1.assert.notStrictEqual(actual.a, expect.a);\nchai_1.assert.instanceOf(actual.a, Function);",
                   "err": {},
-                  "uuid": "d0b1040c-595c-48f6-aef6-42682a0980b5",
-                  "parentUUID": "752b43e0-407c-4071-94bc-1a96f54efc85",
+                  "uuid": "bb0c7183-506c-44da-885e-af0759eb96b0",
+                  "parentUUID": "91101b60-cdd5-4772-be5e-1de994d7c2b8",
                   "isHook": false,
                   "skipped": false
                 },
@@ -622,8 +622,8 @@
                   "context": null,
                   "code": "const expect = { a: (a) => a };\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual.a.toString(), expect.a.toString());\nchai_1.assert.notStrictEqual(actual.a, expect.a);\nchai_1.assert.instanceOf(actual.a, Function);",
                   "err": {},
-                  "uuid": "704cda40-6467-4082-996a-026a7ae8b64a",
-                  "parentUUID": "752b43e0-407c-4071-94bc-1a96f54efc85",
+                  "uuid": "c71b17eb-6196-4692-940e-fe7af4a7d68a",
+                  "parentUUID": "91101b60-cdd5-4772-be5e-1de994d7c2b8",
                   "isHook": false,
                   "skipped": false
                 },
@@ -631,7 +631,7 @@
                   "title": "obj #3 async",
                   "fullTitle": "buildin serializers Function obj #3 async",
                   "timedOut": false,
-                  "duration": 1,
+                  "duration": 0,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -640,37 +640,37 @@
                   "context": null,
                   "code": "const expect = { a: async (a) => a };\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual.a.toString(), expect.a.toString());\nchai_1.assert.notStrictEqual(actual.a, expect.a);\nchai_1.assert.instanceOf(actual.a, Function);",
                   "err": {},
-                  "uuid": "4b7bd3d3-4236-4db8-89a4-8c27e604c6c3",
-                  "parentUUID": "752b43e0-407c-4071-94bc-1a96f54efc85",
+                  "uuid": "615d57ed-3142-4005-ac5a-aa655e5e3c3a",
+                  "parentUUID": "91101b60-cdd5-4772-be5e-1de994d7c2b8",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "042e728b-a7e7-4e29-820a-c9fe2df112d8",
-                "b6015603-21bc-4b8f-be74-40130b55cf9a",
-                "b3567eef-9ced-4f04-aa98-1f0f719500b4",
-                "4af316f2-aa60-46bd-9f6f-5d379189a551",
-                "7ff4e627-a0d4-4358-bb3c-3e22cf1b924b",
-                "0a23854e-64df-4814-97bf-e1c0ddb56c4b",
-                "c0dec3e1-597d-4758-aa04-31970d961381",
-                "22880c4f-56ad-47ae-86db-13d213d30978",
-                "822cb47f-821f-48d8-8f9b-09a42d593d06",
-                "d0b1040c-595c-48f6-aef6-42682a0980b5",
-                "704cda40-6467-4082-996a-026a7ae8b64a",
-                "4b7bd3d3-4236-4db8-89a4-8c27e604c6c3"
+                "5f5af278-1833-4f26-be7b-f00e428e5c58",
+                "9faaa553-43ae-4eb4-b5c7-aa4f67c896fd",
+                "561452e4-853a-4753-b09d-fc550ace6807",
+                "0782c57d-11a1-4146-aae8-3032ec6f3657",
+                "df178ec8-59a3-4514-851d-a78c10a56912",
+                "82686eb3-79f8-4c51-b5da-6d6c23fa3e44",
+                "affa913a-625d-4a79-b1fc-867698a3d18e",
+                "dff82210-0f9c-4fab-a6a0-59eb8001d9ee",
+                "9aa95c8d-ea3f-4c3c-92b0-dfedec5aa74e",
+                "bb0c7183-506c-44da-885e-af0759eb96b0",
+                "c71b17eb-6196-4692-940e-fe7af4a7d68a",
+                "615d57ed-3142-4005-ac5a-aa655e5e3c3a"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 3,
+              "duration": 2,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "23e3925c-ecd9-48f0-8998-23f3476a0a06",
+              "uuid": "f11175fe-8a6b-45b4-b6d0-3bb2e8e13225",
               "title": "Buffer",
               "fullFile": "D:\\works\\ts-project\\rich-json\\test\\buildin-serializers.test.ts",
               "file": "\\test\\buildin-serializers.test.ts",
@@ -681,7 +681,7 @@
                   "title": "plain Buffer",
                   "fullTitle": "buildin serializers Buffer plain Buffer",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -690,8 +690,8 @@
                   "context": null,
                   "code": "const expect = Buffer.from([72, 101, 108, 108, 111]);\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual.toString(), expect.toString());\nchai_1.assert.notStrictEqual(actual, expect);\nchai_1.assert.instanceOf(actual, Buffer);",
                   "err": {},
-                  "uuid": "82e1adf9-d1ab-47d8-a7db-c6d2fe44ae8a",
-                  "parentUUID": "23e3925c-ecd9-48f0-8998-23f3476a0a06",
+                  "uuid": "337af4bf-03ac-450e-beb1-c9d791e213e4",
+                  "parentUUID": "f11175fe-8a6b-45b4-b6d0-3bb2e8e13225",
                   "isHook": false,
                   "skipped": false
                 },
@@ -708,32 +708,14 @@
                   "context": null,
                   "code": "const expect = new Uint8Array([72, 101, 108, 108, 111]);\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual.toString(), expect.toString());\nchai_1.assert.notStrictEqual(actual, expect);\nchai_1.assert.instanceOf(actual, Uint8Array);",
                   "err": {},
-                  "uuid": "60175463-7f99-4945-b328-34e86e8fee40",
-                  "parentUUID": "23e3925c-ecd9-48f0-8998-23f3476a0a06",
+                  "uuid": "abfdcde9-8f12-47a4-9dfa-7820351d90e4",
+                  "parentUUID": "f11175fe-8a6b-45b4-b6d0-3bb2e8e13225",
                   "isHook": false,
                   "skipped": false
                 },
                 {
                   "title": "plain Uint16Array",
                   "fullTitle": "buildin serializers Buffer plain Uint16Array",
-                  "timedOut": false,
-                  "duration": 0,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
-                  "pending": false,
-                  "context": null,
-                  "code": "const expect = new Uint16Array([72, 101, 108, 108, 111]);\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual.toString(), expect.toString());\nchai_1.assert.notStrictEqual(actual, expect);\nchai_1.assert.instanceOf(actual, Uint16Array);",
-                  "err": {},
-                  "uuid": "74c43156-9e6f-42b1-bd26-db0363616243",
-                  "parentUUID": "23e3925c-ecd9-48f0-8998-23f3476a0a06",
-                  "isHook": false,
-                  "skipped": false
-                },
-                {
-                  "title": "plain Uint32Array",
-                  "fullTitle": "buildin serializers Buffer plain Uint32Array",
                   "timedOut": false,
                   "duration": 1,
                   "state": "passed",
@@ -742,10 +724,28 @@
                   "fail": false,
                   "pending": false,
                   "context": null,
+                  "code": "const expect = new Uint16Array([72, 101, 108, 108, 111]);\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual.toString(), expect.toString());\nchai_1.assert.notStrictEqual(actual, expect);\nchai_1.assert.instanceOf(actual, Uint16Array);",
+                  "err": {},
+                  "uuid": "e98d4bec-fc40-4c16-a229-7172df720bb7",
+                  "parentUUID": "f11175fe-8a6b-45b4-b6d0-3bb2e8e13225",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "plain Uint32Array",
+                  "fullTitle": "buildin serializers Buffer plain Uint32Array",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
                   "code": "const expect = new Uint32Array([72, 101, 108, 108, 111]);\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual.toString(), expect.toString());\nchai_1.assert.notStrictEqual(actual, expect);\nchai_1.assert.instanceOf(actual, Uint32Array);",
                   "err": {},
-                  "uuid": "82121d7e-7381-4e66-8726-e300cbadd966",
-                  "parentUUID": "23e3925c-ecd9-48f0-8998-23f3476a0a06",
+                  "uuid": "cfd6daf4-0558-4b05-b27e-21801e013510",
+                  "parentUUID": "f11175fe-8a6b-45b4-b6d0-3bb2e8e13225",
                   "isHook": false,
                   "skipped": false
                 },
@@ -762,8 +762,8 @@
                   "context": null,
                   "code": "const expect = new Int32Array([72, 101, 108, 108, 111]);\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual.toString(), expect.toString());\nchai_1.assert.notStrictEqual(actual, expect);\nchai_1.assert.instanceOf(actual, Int32Array);",
                   "err": {},
-                  "uuid": "49252f98-c17d-4ea9-9914-aedb7de1858b",
-                  "parentUUID": "23e3925c-ecd9-48f0-8998-23f3476a0a06",
+                  "uuid": "f6b8437c-b2f3-4eee-892b-13d473ab4a1d",
+                  "parentUUID": "f11175fe-8a6b-45b4-b6d0-3bb2e8e13225",
                   "isHook": false,
                   "skipped": false
                 },
@@ -771,7 +771,7 @@
                   "title": "obj Buffer",
                   "fullTitle": "buildin serializers Buffer obj Buffer",
                   "timedOut": false,
-                  "duration": 1,
+                  "duration": 0,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -780,8 +780,8 @@
                   "context": null,
                   "code": "const expect = { a: Buffer.from([72, 101, 108, 108, 111]) };\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual, expect);\nchai_1.assert.notStrictEqual(actual.a, expect.a);\nchai_1.assert.instanceOf(actual.a, Buffer);",
                   "err": {},
-                  "uuid": "96308c70-924d-4494-9ebf-f79505162a8c",
-                  "parentUUID": "23e3925c-ecd9-48f0-8998-23f3476a0a06",
+                  "uuid": "244f67d5-e210-42a3-bb03-3f62ea6d0644",
+                  "parentUUID": "f11175fe-8a6b-45b4-b6d0-3bb2e8e13225",
                   "isHook": false,
                   "skipped": false
                 },
@@ -798,8 +798,8 @@
                   "context": null,
                   "code": "const expect = { a: new Uint8Array([72, 101, 108, 108, 111]) };\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual, expect);\nchai_1.assert.notStrictEqual(actual.a, expect.a);\nchai_1.assert.instanceOf(actual.a, Uint8Array);",
                   "err": {},
-                  "uuid": "2c54a352-5942-46e7-9b2d-daf11a904891",
-                  "parentUUID": "23e3925c-ecd9-48f0-8998-23f3476a0a06",
+                  "uuid": "c7240e6a-b331-45c1-a557-03da24cebe1e",
+                  "parentUUID": "f11175fe-8a6b-45b4-b6d0-3bb2e8e13225",
                   "isHook": false,
                   "skipped": false
                 },
@@ -816,8 +816,8 @@
                   "context": null,
                   "code": "const expect = { a: new Uint16Array([72, 101, 108, 108, 111]) };\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual, expect);\nchai_1.assert.notStrictEqual(actual.a, expect.a);\nchai_1.assert.instanceOf(actual.a, Uint16Array);",
                   "err": {},
-                  "uuid": "c7013e9e-5e07-424f-aeb4-001cec928d30",
-                  "parentUUID": "23e3925c-ecd9-48f0-8998-23f3476a0a06",
+                  "uuid": "459221e6-4b40-4673-b538-83f219bd6acf",
+                  "parentUUID": "f11175fe-8a6b-45b4-b6d0-3bb2e8e13225",
                   "isHook": false,
                   "skipped": false
                 },
@@ -834,23 +834,23 @@
                   "context": null,
                   "code": "const expect = { a: new Uint32Array([72, 101, 108, 108, 111]) };\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual, expect);\nchai_1.assert.notStrictEqual(actual.a, expect.a);\nchai_1.assert.instanceOf(actual.a, Uint32Array);",
                   "err": {},
-                  "uuid": "7043642f-a003-480a-bc47-efb3e0afbe47",
-                  "parentUUID": "23e3925c-ecd9-48f0-8998-23f3476a0a06",
+                  "uuid": "4595c7bc-e1b3-45f3-b963-74a0787ddf17",
+                  "parentUUID": "f11175fe-8a6b-45b4-b6d0-3bb2e8e13225",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "82e1adf9-d1ab-47d8-a7db-c6d2fe44ae8a",
-                "60175463-7f99-4945-b328-34e86e8fee40",
-                "74c43156-9e6f-42b1-bd26-db0363616243",
-                "82121d7e-7381-4e66-8726-e300cbadd966",
-                "49252f98-c17d-4ea9-9914-aedb7de1858b",
-                "96308c70-924d-4494-9ebf-f79505162a8c",
-                "2c54a352-5942-46e7-9b2d-daf11a904891",
-                "c7013e9e-5e07-424f-aeb4-001cec928d30",
-                "7043642f-a003-480a-bc47-efb3e0afbe47"
+                "337af4bf-03ac-450e-beb1-c9d791e213e4",
+                "abfdcde9-8f12-47a4-9dfa-7820351d90e4",
+                "e98d4bec-fc40-4c16-a229-7172df720bb7",
+                "cfd6daf4-0558-4b05-b27e-21801e013510",
+                "f6b8437c-b2f3-4eee-892b-13d473ab4a1d",
+                "244f67d5-e210-42a3-bb03-3f62ea6d0644",
+                "c7240e6a-b331-45c1-a557-03da24cebe1e",
+                "459221e6-4b40-4673-b538-83f219bd6acf",
+                "4595c7bc-e1b3-45f3-b963-74a0787ddf17"
               ],
               "failures": [],
               "pending": [],
@@ -861,7 +861,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "1c125770-ac6e-4606-bb09-0e5140fc90a3",
+              "uuid": "a9c6ac7a-6234-4f35-8e81-a3f057553d9f",
               "title": "WrapRunner",
               "fullFile": "D:\\works\\ts-project\\rich-json\\test\\buildin-serializers.test.ts",
               "file": "\\test\\buildin-serializers.test.ts",
@@ -881,8 +881,8 @@
                   "context": null,
                   "code": "function add(a, b) {\n    return a + b;\n}\nconst expect = new src_1.default.WrapRunner(add, 1, 2);\nconst actual = src_1.default.clone(expect);\nchai_1.assert.instanceOf(actual, src_1.default.WrapRunner);\nchai_1.assert.deepEqual(actual.run(), 3);",
                   "err": {},
-                  "uuid": "5f834c0c-b3c2-44fc-bc21-d125f4622dad",
-                  "parentUUID": "1c125770-ac6e-4606-bb09-0e5140fc90a3",
+                  "uuid": "19814392-2b08-44a1-a9f1-1fc25e49c65b",
+                  "parentUUID": "a9c6ac7a-6234-4f35-8e81-a3f057553d9f",
                   "isHook": false,
                   "skipped": false
                 },
@@ -899,8 +899,8 @@
                   "context": null,
                   "code": "function add(a, b) {\n    return Promise.resolve(a + b);\n}\nconst expect = new src_1.default.WrapRunner(add, 1, 2);\nconst actual = src_1.default.clone(expect);\nchai_1.assert.instanceOf(actual, src_1.default.WrapRunner);\nconst called = actual.run();\nchai_1.assert.instanceOf(called, Promise);\nchai_1.assert.deepEqual(await called, 3);",
                   "err": {},
-                  "uuid": "929fc6cf-134f-4995-9029-c11a8aafe7a9",
-                  "parentUUID": "1c125770-ac6e-4606-bb09-0e5140fc90a3",
+                  "uuid": "a8217eda-0a3b-4932-b2ed-7f019e9a02bc",
+                  "parentUUID": "a9c6ac7a-6234-4f35-8e81-a3f057553d9f",
                   "isHook": false,
                   "skipped": false
                 },
@@ -917,17 +917,17 @@
                   "context": null,
                   "code": "function add(a, b) {\n    return (this ?? 0) + a + b;\n}\nconst expect = new src_1.default.WrapRunner(add, 1, 2);\nconst actual = src_1.default.clone(expect);\nchai_1.assert.instanceOf(actual, src_1.default.WrapRunner);\nchai_1.assert.deepEqual(actual.run(), 3);\nchai_1.assert.deepEqual(actual.run(5), 8);\nchai_1.assert.deepEqual(actual.run(-1), 2);",
                   "err": {},
-                  "uuid": "eeb9856b-def2-4422-a43a-f0dbb08bcf48",
-                  "parentUUID": "1c125770-ac6e-4606-bb09-0e5140fc90a3",
+                  "uuid": "583f53c2-1327-4914-998b-be4fa2449c94",
+                  "parentUUID": "a9c6ac7a-6234-4f35-8e81-a3f057553d9f",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "5f834c0c-b3c2-44fc-bc21-d125f4622dad",
-                "929fc6cf-134f-4995-9029-c11a8aafe7a9",
-                "eeb9856b-def2-4422-a43a-f0dbb08bcf48"
+                "19814392-2b08-44a1-a9f1-1fc25e49c65b",
+                "a8217eda-0a3b-4932-b2ed-7f019e9a02bc",
+                "583f53c2-1327-4914-998b-be4fa2449c94"
               ],
               "failures": [],
               "pending": [],
@@ -948,7 +948,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "ededd191-9c99-43d6-b4fb-5cad3e4735a9",
+          "uuid": "e9f4f932-fe5e-480e-bed9-057ca39abd11",
           "title": "complex",
           "fullFile": "D:\\works\\ts-project\\rich-json\\test\\complex.test.ts",
           "file": "\\test\\complex.test.ts",
@@ -966,8 +966,8 @@
               "context": null,
               "code": "src_1.default.resetCustomerSerializers();\nsrc_1.default.addCustomerSerializer({\n    className: 'abc',\n    class: MyClass,\n    toContent: value => ({\n        abc: value.data,\n        xyz: value.ref,\n    }),\n    fromContent: ({ abc, xyz }) => {\n        return MyClass.create(abc, xyz);\n    },\n});",
               "err": {},
-              "uuid": "1cd17ab7-3ff6-4318-80c5-10cd755c5360",
-              "parentUUID": "ededd191-9c99-43d6-b4fb-5cad3e4735a9",
+              "uuid": "2735ae1f-5126-4aed-b395-0a18c438605f",
+              "parentUUID": "e9f4f932-fe5e-480e-bed9-057ca39abd11",
               "isHook": true,
               "skipped": false
             },
@@ -984,8 +984,8 @@
               "context": null,
               "code": "actual = src_1.default.clone(expect);",
               "err": {},
-              "uuid": "d8191bc4-0e88-46f2-8d47-5a760977c515",
-              "parentUUID": "ededd191-9c99-43d6-b4fb-5cad3e4735a9",
+              "uuid": "58fd4f37-6492-4235-9d74-3df497df57c9",
+              "parentUUID": "e9f4f932-fe5e-480e-bed9-057ca39abd11",
               "isHook": true,
               "skipped": false
             }
@@ -994,7 +994,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "ac0f6f6a-60d9-4fff-a7a5-6d495627625a",
+              "uuid": "612e61c8-8da5-4d86-aba2-4b2bbe93b461",
               "title": "circle",
               "fullFile": "D:\\works\\ts-project\\rich-json\\test\\complex.test.ts",
               "file": "\\test\\complex.test.ts",
@@ -1014,8 +1014,8 @@
                   "context": null,
                   "code": "chai_1.assert.strictEqual(actual.circle.root, actual);",
                   "err": {},
-                  "uuid": "dad5bb75-b3c9-4f56-945d-70801c097a1c",
-                  "parentUUID": "ac0f6f6a-60d9-4fff-a7a5-6d495627625a",
+                  "uuid": "1af7c856-53c1-4b68-bb52-4cd44a39da2d",
+                  "parentUUID": "612e61c8-8da5-4d86-aba2-4b2bbe93b461",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1032,16 +1032,16 @@
                   "context": null,
                   "code": "chai_1.assert.strictEqual(actual.circle.circle.circle, actual.circle);",
                   "err": {},
-                  "uuid": "9bfc6a4e-65dc-4bf5-ae38-3b3abc817ba9",
-                  "parentUUID": "ac0f6f6a-60d9-4fff-a7a5-6d495627625a",
+                  "uuid": "249d53a0-48d5-4370-b118-e1256f897625",
+                  "parentUUID": "612e61c8-8da5-4d86-aba2-4b2bbe93b461",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "dad5bb75-b3c9-4f56-945d-70801c097a1c",
-                "9bfc6a4e-65dc-4bf5-ae38-3b3abc817ba9"
+                "1af7c856-53c1-4b68-bb52-4cd44a39da2d",
+                "249d53a0-48d5-4370-b118-e1256f897625"
               ],
               "failures": [],
               "pending": [],
@@ -1052,7 +1052,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "e81edca8-3f84-45a4-bc87-b8add2a7772e",
+              "uuid": "502b0895-7f6f-46e0-b1e4-c53fa5da37b6",
               "title": "$ref",
               "fullFile": "D:\\works\\ts-project\\rich-json\\test\\complex.test.ts",
               "file": "\\test\\complex.test.ts",
@@ -1072,8 +1072,8 @@
                   "context": null,
                   "code": "chai_1.assert.strictEqual(actual.$ref.c, actual.c);",
                   "err": {},
-                  "uuid": "3e8ace0d-df1d-4d0f-a79a-e4419c766ca7",
-                  "parentUUID": "e81edca8-3f84-45a4-bc87-b8add2a7772e",
+                  "uuid": "c85f72eb-7032-4cb4-8df2-29c49a63847b",
+                  "parentUUID": "502b0895-7f6f-46e0-b1e4-c53fa5da37b6",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1090,8 +1090,8 @@
                   "context": null,
                   "code": "chai_1.assert.strictEqual(actual.$ref.d, actual.d);\nchai_1.assert.notStrictEqual(actual.$ref.d, obj);",
                   "err": {},
-                  "uuid": "7d9bcc33-99e7-4d34-a0c9-1f3a86549924",
-                  "parentUUID": "e81edca8-3f84-45a4-bc87-b8add2a7772e",
+                  "uuid": "bc7f1a22-04b4-488b-86b7-a7daea5de63d",
+                  "parentUUID": "502b0895-7f6f-46e0-b1e4-c53fa5da37b6",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1108,8 +1108,8 @@
                   "context": null,
                   "code": "chai_1.assert.strictEqual(actual.$ref.e, actual.e);\nconst value = Array.from(actual.$ref.e)[0];\nchai_1.assert.strictEqual(value, actual.d);",
                   "err": {},
-                  "uuid": "0322a598-d050-4fa1-888b-b8cfbeda1353",
-                  "parentUUID": "e81edca8-3f84-45a4-bc87-b8add2a7772e",
+                  "uuid": "3e5829d2-5151-452c-87d8-ff32dfab9115",
+                  "parentUUID": "502b0895-7f6f-46e0-b1e4-c53fa5da37b6",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1126,8 +1126,8 @@
                   "context": null,
                   "code": "const value = Array.from(actual.$ref.g)[0];\nchai_1.assert.strictEqual(value, actual.g);",
                   "err": {},
-                  "uuid": "d4c85908-f5c4-40db-b008-f44955186f43",
-                  "parentUUID": "e81edca8-3f84-45a4-bc87-b8add2a7772e",
+                  "uuid": "013e78a0-14bb-4302-a30d-1d4eb0d824ae",
+                  "parentUUID": "502b0895-7f6f-46e0-b1e4-c53fa5da37b6",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1144,8 +1144,8 @@
                   "context": null,
                   "code": "chai_1.assert.strictEqual(actual.$ref.f, actual.f);\nconst key = Array.from(actual.$ref.f.entries())[0][0];\nchai_1.assert.strictEqual(key, actual.d);\nconst value = Array.from(actual.$ref.f.entries())[1][1];\nchai_1.assert.strictEqual(value, actual.d);",
                   "err": {},
-                  "uuid": "5d836d20-a839-418e-a666-2f691f00d6e4",
-                  "parentUUID": "e81edca8-3f84-45a4-bc87-b8add2a7772e",
+                  "uuid": "14c6a15b-1f3d-4c25-b5e9-730ff4d0275c",
+                  "parentUUID": "502b0895-7f6f-46e0-b1e4-c53fa5da37b6",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1162,8 +1162,8 @@
                   "context": null,
                   "code": "const key = Array.from(actual.$ref.gg.entries())[0][0];\nchai_1.assert.strictEqual(key, actual.g);\nconst value = Array.from(actual.$ref.gg.entries())[1][1];\nchai_1.assert.strictEqual(value, actual.g);",
                   "err": {},
-                  "uuid": "f86ce78b-11ab-452c-bcf3-820ca51786bb",
-                  "parentUUID": "e81edca8-3f84-45a4-bc87-b8add2a7772e",
+                  "uuid": "cb1d4f8f-34d6-497a-b515-0361f255567a",
+                  "parentUUID": "502b0895-7f6f-46e0-b1e4-c53fa5da37b6",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1180,8 +1180,8 @@
                   "context": null,
                   "code": "chai_1.assert.strictEqual(actual.$ref.h, actual.h);\nchai_1.assert.notStrictEqual(actual.$ref.h, buffer);",
                   "err": {},
-                  "uuid": "23a73894-4de3-415d-9b08-aba947c4ffdb",
-                  "parentUUID": "e81edca8-3f84-45a4-bc87-b8add2a7772e",
+                  "uuid": "a0e0f717-2761-453f-8cf6-d449cfca9ae5",
+                  "parentUUID": "502b0895-7f6f-46e0-b1e4-c53fa5da37b6",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1198,8 +1198,8 @@
                   "context": null,
                   "code": "chai_1.assert.strictEqual(actual.$ref.g0, actual.g);\nchai_1.assert.notStrictEqual(actual.$ref.g0, obj2);",
                   "err": {},
-                  "uuid": "35eb7a3d-a912-43e4-bf5b-70d95f59384b",
-                  "parentUUID": "e81edca8-3f84-45a4-bc87-b8add2a7772e",
+                  "uuid": "98b7d7ee-b99b-4162-b298-b48a65c14eef",
+                  "parentUUID": "502b0895-7f6f-46e0-b1e4-c53fa5da37b6",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1207,7 +1207,7 @@
                   "title": "class #2",
                   "fullTitle": "complex $ref class #2",
                   "timedOut": false,
-                  "duration": 1,
+                  "duration": 0,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -1216,8 +1216,8 @@
                   "context": null,
                   "code": "chai_1.assert.strictEqual(actual.$ref.g0.ref, actual.d);\nchai_1.assert.notStrictEqual(actual.$ref.g0.ref, obj2);",
                   "err": {},
-                  "uuid": "5df2d82e-e037-4951-b140-913ea0fb43c7",
-                  "parentUUID": "e81edca8-3f84-45a4-bc87-b8add2a7772e",
+                  "uuid": "677eb439-3800-4797-83c4-f47b761f1588",
+                  "parentUUID": "502b0895-7f6f-46e0-b1e4-c53fa5da37b6",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1234,29 +1234,29 @@
                   "context": null,
                   "code": "chai_1.assert.strictEqual(actual.$ref.i, actual.i);\nconst value = Array.from(actual.$ref.i)[0];\nchai_1.assert.strictEqual(value, actual.g);\nchai_1.assert.strictEqual(value.ref, actual.d);",
                   "err": {},
-                  "uuid": "3075996b-e91e-4906-9f01-14234b7b498f",
-                  "parentUUID": "e81edca8-3f84-45a4-bc87-b8add2a7772e",
+                  "uuid": "f74071f0-02cc-4f0b-8fa1-e288b1293c3e",
+                  "parentUUID": "502b0895-7f6f-46e0-b1e4-c53fa5da37b6",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "3e8ace0d-df1d-4d0f-a79a-e4419c766ca7",
-                "7d9bcc33-99e7-4d34-a0c9-1f3a86549924",
-                "0322a598-d050-4fa1-888b-b8cfbeda1353",
-                "d4c85908-f5c4-40db-b008-f44955186f43",
-                "5d836d20-a839-418e-a666-2f691f00d6e4",
-                "f86ce78b-11ab-452c-bcf3-820ca51786bb",
-                "23a73894-4de3-415d-9b08-aba947c4ffdb",
-                "35eb7a3d-a912-43e4-bf5b-70d95f59384b",
-                "5df2d82e-e037-4951-b140-913ea0fb43c7",
-                "3075996b-e91e-4906-9f01-14234b7b498f"
+                "c85f72eb-7032-4cb4-8df2-29c49a63847b",
+                "bc7f1a22-04b4-488b-86b7-a7daea5de63d",
+                "3e5829d2-5151-452c-87d8-ff32dfab9115",
+                "013e78a0-14bb-4302-a30d-1d4eb0d824ae",
+                "14c6a15b-1f3d-4c25-b5e9-730ff4d0275c",
+                "cb1d4f8f-34d6-497a-b515-0361f255567a",
+                "a0e0f717-2761-453f-8cf6-d449cfca9ae5",
+                "98b7d7ee-b99b-4162-b298-b48a65c14eef",
+                "677eb439-3800-4797-83c4-f47b761f1588",
+                "f74071f0-02cc-4f0b-8fa1-e288b1293c3e"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 1,
+              "duration": 0,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -1272,7 +1272,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "56cf91f2-db7b-4634-889a-eda40854e1a7",
+          "uuid": "771d4415-d4e5-4a13-a42a-6825459e0dd1",
           "title": "customerSerializers",
           "fullFile": "D:\\works\\ts-project\\rich-json\\test\\customerSerializers.test.ts",
           "file": "\\test\\customerSerializers.test.ts",
@@ -1290,8 +1290,8 @@
               "context": null,
               "code": "src_1.default.resetCustomerSerializers();",
               "err": {},
-              "uuid": "006d8f14-4d03-496f-a66a-65729aca4e34",
-              "parentUUID": "56cf91f2-db7b-4634-889a-eda40854e1a7",
+              "uuid": "9d56d60f-8e2a-43f9-aad3-ae2074014e77",
+              "parentUUID": "771d4415-d4e5-4a13-a42a-6825459e0dd1",
               "isHook": true,
               "skipped": false
             }
@@ -1311,32 +1311,14 @@
               "context": null,
               "code": "src_1.default.addCustomerSerializer({\n    className: 'abc',\n    class: MyClass,\n    toContent: value => ({\n        abc: value.data,\n    }),\n    fromContent: json => {\n        return MyClass.create(json.abc);\n    },\n});\nconst acutal = src_1.default.clone(obj);\nconst expect = obj;\nchai_1.assert.deepEqual(acutal, expect);\nchai_1.assert.instanceOf(acutal.key5, MyClass);",
               "err": {},
-              "uuid": "9108d05f-860d-4113-9bb1-cc4a8409d547",
-              "parentUUID": "56cf91f2-db7b-4634-889a-eda40854e1a7",
+              "uuid": "6ae5cb5a-e71e-4748-b15c-1565eb5d1ee3",
+              "parentUUID": "771d4415-d4e5-4a13-a42a-6825459e0dd1",
               "isHook": false,
               "skipped": false
             },
             {
               "title": "toJSON SHOULD NOT change after convert",
               "fullTitle": "customerSerializers toJSON SHOULD NOT change after convert",
-              "timedOut": false,
-              "duration": 0,
-              "state": "passed",
-              "speed": "fast",
-              "pass": true,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "let counter = 0;\nclass Clz {\n    data = 0;\n    toJSON() {\n        return counter++;\n    }\n}\nconst inst = new Clz();\ninst.data = 5;\nconst stage1 = JSON.stringify(inst);\nchai_1.assert.equal(counter, 1);\nchai_1.assert.equal('0', stage1);\nsrc_1.default.addCustomerSerializer({\n    class: Clz,\n    toContent: value => value.data,\n    fromContent: json => { const inst = new Clz(); inst.data = json; return inst; },\n});\nconst inst2 = src_1.default.clone(inst);\nchai_1.assert.equal(inst2.data, inst.data);\nchai_1.assert.notEqual(inst2.data, 0);\nchai_1.assert.equal(counter, 1);\nconst stage2 = JSON.stringify(inst);\nchai_1.assert.equal(counter, 2);\nchai_1.assert.equal('1', stage2);",
-              "err": {},
-              "uuid": "b126df39-9273-405c-8a99-979491e33ea4",
-              "parentUUID": "56cf91f2-db7b-4634-889a-eda40854e1a7",
-              "isHook": false,
-              "skipped": false
-            },
-            {
-              "title": "SHOULD NOT add duplicate converter",
-              "fullTitle": "customerSerializers SHOULD NOT add duplicate converter",
               "timedOut": false,
               "duration": 1,
               "state": "passed",
@@ -1345,19 +1327,37 @@
               "fail": false,
               "pending": false,
               "context": null,
+              "code": "let counter = 0;\nclass Clz {\n    data = 0;\n    toJSON() {\n        return counter++;\n    }\n}\nconst inst = new Clz();\ninst.data = 5;\nconst stage1 = JSON.stringify(inst);\nchai_1.assert.equal(counter, 1);\nchai_1.assert.equal('0', stage1);\nsrc_1.default.addCustomerSerializer({\n    class: Clz,\n    toContent: value => value.data,\n    fromContent: json => { const inst = new Clz(); inst.data = json; return inst; },\n});\nconst inst2 = src_1.default.clone(inst);\nchai_1.assert.equal(inst2.data, inst.data);\nchai_1.assert.notEqual(inst2.data, 0);\nchai_1.assert.equal(counter, 1);\nconst stage2 = JSON.stringify(inst);\nchai_1.assert.equal(counter, 2);\nchai_1.assert.equal('1', stage2);",
+              "err": {},
+              "uuid": "46e9810e-eb67-477a-ad1d-9da4ae1581fb",
+              "parentUUID": "771d4415-d4e5-4a13-a42a-6825459e0dd1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "SHOULD NOT add duplicate converter",
+              "fullTitle": "customerSerializers SHOULD NOT add duplicate converter",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
               "code": "class Clz {\n}\nchai_1.assert.doesNotThrow(() => {\n    src_1.default.addCustomerSerializer({\n        class: Clz,\n        fromContent: null,\n        toContent: null,\n    });\n});\nchai_1.assert.Throw(() => {\n    src_1.default.addCustomerSerializer({\n        class: Clz,\n        fromContent: null,\n        toContent: null,\n    });\n});\nchai_1.assert.Throw(() => {\n    src_1.default.addCustomerSerializer({\n        className: 'Clz',\n        class: null,\n        fromContent: null,\n        toContent: null,\n    });\n});\nchai_1.assert.doesNotThrow(() => {\n    src_1.default.addCustomerSerializer({\n        className: 'Clz2',\n        class: Clz,\n        fromContent: null,\n        toContent: null,\n    });\n});",
               "err": {},
-              "uuid": "2a06bd7e-4de2-48dc-9394-2ce872212b61",
-              "parentUUID": "56cf91f2-db7b-4634-889a-eda40854e1a7",
+              "uuid": "8b023852-dfc8-4880-98b6-73c08fd6222f",
+              "parentUUID": "771d4415-d4e5-4a13-a42a-6825459e0dd1",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "9108d05f-860d-4113-9bb1-cc4a8409d547",
-            "b126df39-9273-405c-8a99-979491e33ea4",
-            "2a06bd7e-4de2-48dc-9394-2ce872212b61"
+            "6ae5cb5a-e71e-4748-b15c-1565eb5d1ee3",
+            "46e9810e-eb67-477a-ad1d-9da4ae1581fb",
+            "8b023852-dfc8-4880-98b6-73c08fd6222f"
           ],
           "failures": [],
           "pending": [],
@@ -1368,7 +1368,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "434a155c-aa60-46c4-992a-07f112f9e0be",
+          "uuid": "050fde1e-f238-4751-904d-8b17179c79a6",
           "title": "primitive",
           "fullFile": "D:\\works\\ts-project\\rich-json\\test\\primitive.test.ts",
           "file": "\\test\\primitive.test.ts",
@@ -1386,8 +1386,8 @@
               "context": null,
               "code": "src_1.default.resetCustomerSerializers();",
               "err": {},
-              "uuid": "833bad58-0ab4-4f8b-867c-bbe616ff2308",
-              "parentUUID": "434a155c-aa60-46c4-992a-07f112f9e0be",
+              "uuid": "30b6b176-771e-44d6-a7f7-ee81db4280eb",
+              "parentUUID": "050fde1e-f238-4751-904d-8b17179c79a6",
               "isHook": true,
               "skipped": false
             }
@@ -1396,7 +1396,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "159b66c9-2ad4-4358-b985-9bc7f80b2cb8",
+              "uuid": "3c53945b-5690-4a6a-a21c-2ed81394b988",
               "title": "null",
               "fullFile": "D:\\works\\ts-project\\rich-json\\test\\primitive.test.ts",
               "file": "\\test\\primitive.test.ts",
@@ -1416,8 +1416,8 @@
                   "context": null,
                   "code": "const expect = null;\nconst actual = src_1.default.clone(expect);\nchai_1.assert.equal(actual, expect);",
                   "err": {},
-                  "uuid": "d743fd10-60cf-43e9-bb66-26e2e95d31de",
-                  "parentUUID": "159b66c9-2ad4-4358-b985-9bc7f80b2cb8",
+                  "uuid": "4f0be9ce-55e0-421a-a79d-955999b58768",
+                  "parentUUID": "3c53945b-5690-4a6a-a21c-2ed81394b988",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1434,16 +1434,16 @@
                   "context": null,
                   "code": "const expect = { a: null };\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual, expect);\nchai_1.assert.notStrictEqual(actual, expect);",
                   "err": {},
-                  "uuid": "7c9f49c2-1732-458b-bfc4-b2bb56a90428",
-                  "parentUUID": "159b66c9-2ad4-4358-b985-9bc7f80b2cb8",
+                  "uuid": "c216fc5d-604a-4ca7-986c-359539246d45",
+                  "parentUUID": "3c53945b-5690-4a6a-a21c-2ed81394b988",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "d743fd10-60cf-43e9-bb66-26e2e95d31de",
-                "7c9f49c2-1732-458b-bfc4-b2bb56a90428"
+                "4f0be9ce-55e0-421a-a79d-955999b58768",
+                "c216fc5d-604a-4ca7-986c-359539246d45"
               ],
               "failures": [],
               "pending": [],
@@ -1454,7 +1454,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "c9e4e1c4-d300-4724-a71f-f2720b88bd1d",
+              "uuid": "f200cdf2-5abc-4c88-ab39-6f70e04bcdb9",
               "title": "undefined",
               "fullFile": "D:\\works\\ts-project\\rich-json\\test\\primitive.test.ts",
               "file": "\\test\\primitive.test.ts",
@@ -1465,7 +1465,7 @@
                   "title": "plain",
                   "fullTitle": "primitive undefined plain",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -1474,8 +1474,8 @@
                   "context": null,
                   "code": "const expect = undefined;\nconst actual = src_1.default.clone(expect);\nchai_1.assert.equal(actual, expect);",
                   "err": {},
-                  "uuid": "80eb19d4-6fec-4afb-8cfe-b8c2a1e88f86",
-                  "parentUUID": "c9e4e1c4-d300-4724-a71f-f2720b88bd1d",
+                  "uuid": "7d353c8b-b1cf-4ad8-be9f-7c44571b9553",
+                  "parentUUID": "f200cdf2-5abc-4c88-ab39-6f70e04bcdb9",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1483,7 +1483,7 @@
                   "title": "obj",
                   "fullTitle": "primitive undefined obj",
                   "timedOut": false,
-                  "duration": 1,
+                  "duration": 0,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -1492,16 +1492,16 @@
                   "context": null,
                   "code": "const expect = { a: undefined };\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual, {});\nchai_1.assert.notStrictEqual(actual, expect);",
                   "err": {},
-                  "uuid": "37bd78c6-8550-4710-93ad-279512b88cb1",
-                  "parentUUID": "c9e4e1c4-d300-4724-a71f-f2720b88bd1d",
+                  "uuid": "e76c02fc-86f1-47dc-94bc-0b104592e809",
+                  "parentUUID": "f200cdf2-5abc-4c88-ab39-6f70e04bcdb9",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "80eb19d4-6fec-4afb-8cfe-b8c2a1e88f86",
-                "37bd78c6-8550-4710-93ad-279512b88cb1"
+                "7d353c8b-b1cf-4ad8-be9f-7c44571b9553",
+                "e76c02fc-86f1-47dc-94bc-0b104592e809"
               ],
               "failures": [],
               "pending": [],
@@ -1512,7 +1512,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "6db3ac7b-3529-4ae1-acc9-bec4336f7188",
+              "uuid": "879c44de-115e-4947-b4fe-82c72871b7af",
               "title": "bigint",
               "fullFile": "D:\\works\\ts-project\\rich-json\\test\\primitive.test.ts",
               "file": "\\test\\primitive.test.ts",
@@ -1532,8 +1532,8 @@
                   "context": null,
                   "code": "const expect = 1n;\nconst actual = src_1.default.clone(expect);\nchai_1.assert.equal(actual, expect);",
                   "err": {},
-                  "uuid": "d6e6156b-9bd1-4cd6-881c-e27fb2c140fe",
-                  "parentUUID": "6db3ac7b-3529-4ae1-acc9-bec4336f7188",
+                  "uuid": "7f6dad48-d4a9-4e27-a911-b09007ba589f",
+                  "parentUUID": "879c44de-115e-4947-b4fe-82c72871b7af",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1550,16 +1550,16 @@
                   "context": null,
                   "code": "const expect = { a: 1n };\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual, expect);",
                   "err": {},
-                  "uuid": "ce1a4330-0277-4452-a542-3008653c9d06",
-                  "parentUUID": "6db3ac7b-3529-4ae1-acc9-bec4336f7188",
+                  "uuid": "60cec83b-4cf9-400a-8329-f2495090b6b4",
+                  "parentUUID": "879c44de-115e-4947-b4fe-82c72871b7af",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "d6e6156b-9bd1-4cd6-881c-e27fb2c140fe",
-                "ce1a4330-0277-4452-a542-3008653c9d06"
+                "7f6dad48-d4a9-4e27-a911-b09007ba589f",
+                "60cec83b-4cf9-400a-8329-f2495090b6b4"
               ],
               "failures": [],
               "pending": [],
@@ -1570,7 +1570,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "48f0d10d-dcd4-45e0-90d6-500176d1a547",
+              "uuid": "54e84eac-73b2-4586-83ac-110f3acb81cc",
               "title": "number",
               "fullFile": "D:\\works\\ts-project\\rich-json\\test\\primitive.test.ts",
               "file": "\\test\\primitive.test.ts",
@@ -1581,7 +1581,7 @@
                   "title": "normal",
                   "fullTitle": "primitive number normal",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -1590,8 +1590,8 @@
                   "context": null,
                   "code": "const expect = 1;\nconst actual = src_1.default.clone(expect);\nchai_1.assert.equal(actual, expect);",
                   "err": {},
-                  "uuid": "fcece2eb-dbf0-4f59-b170-2cab38d5cc71",
-                  "parentUUID": "48f0d10d-dcd4-45e0-90d6-500176d1a547",
+                  "uuid": "a9cda65b-da1b-44ad-83e3-3d8a91d41f2d",
+                  "parentUUID": "54e84eac-73b2-4586-83ac-110f3acb81cc",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1608,8 +1608,8 @@
                   "context": null,
                   "code": "const expect = Number.NaN;\nconst actual = src_1.default.clone(expect);\nchai_1.assert.isNaN(actual);",
                   "err": {},
-                  "uuid": "d237255a-8f2d-427e-9c4d-b9b4e9fe003c",
-                  "parentUUID": "48f0d10d-dcd4-45e0-90d6-500176d1a547",
+                  "uuid": "31afcb6f-9e8a-44ea-8e01-2a91e1df0d27",
+                  "parentUUID": "54e84eac-73b2-4586-83ac-110f3acb81cc",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1617,7 +1617,7 @@
                   "title": "-0",
                   "fullTitle": "primitive number -0",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -1626,8 +1626,8 @@
                   "context": null,
                   "code": "const expect = -0;\nconst actual = src_1.default.clone(expect);\nchai_1.assert.deepEqual(actual, expect);\nchai_1.assert.notDeepEqual(actual, 0);",
                   "err": {},
-                  "uuid": "cd266e11-2718-453b-aa3e-65888fd0540d",
-                  "parentUUID": "48f0d10d-dcd4-45e0-90d6-500176d1a547",
+                  "uuid": "6a09ba88-9dda-49ae-8812-21817097f5c3",
+                  "parentUUID": "54e84eac-73b2-4586-83ac-110f3acb81cc",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1644,8 +1644,8 @@
                   "context": null,
                   "code": "const expect = Number[i];\nconst actual = src_1.default.clone(expect);\nchai_1.assert.equal(actual, expect);",
                   "err": {},
-                  "uuid": "638817ff-4a8f-4a4c-a51b-68e43e569814",
-                  "parentUUID": "48f0d10d-dcd4-45e0-90d6-500176d1a547",
+                  "uuid": "314348fb-8a71-4644-8523-580c96db2041",
+                  "parentUUID": "54e84eac-73b2-4586-83ac-110f3acb81cc",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1662,8 +1662,8 @@
                   "context": null,
                   "code": "const expect = Number[i];\nconst actual = src_1.default.clone(expect);\nchai_1.assert.equal(actual, expect);",
                   "err": {},
-                  "uuid": "043cdc50-9aa6-4eee-ad96-b2f01a76d3c2",
-                  "parentUUID": "48f0d10d-dcd4-45e0-90d6-500176d1a547",
+                  "uuid": "7d526329-e3cc-4ca5-9557-19f1b2f01b4a",
+                  "parentUUID": "54e84eac-73b2-4586-83ac-110f3acb81cc",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1671,7 +1671,7 @@
                   "title": "MAX_VALUE",
                   "fullTitle": "primitive number MAX_VALUE",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -1680,8 +1680,8 @@
                   "context": null,
                   "code": "const expect = Number[i];\nconst actual = src_1.default.clone(expect);\nchai_1.assert.equal(actual, expect);",
                   "err": {},
-                  "uuid": "e5aeddb7-d756-40cd-9d54-651c429fa843",
-                  "parentUUID": "48f0d10d-dcd4-45e0-90d6-500176d1a547",
+                  "uuid": "f8b5ebef-64a7-46c3-b40e-f53975e8e0cc",
+                  "parentUUID": "54e84eac-73b2-4586-83ac-110f3acb81cc",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1698,8 +1698,8 @@
                   "context": null,
                   "code": "const expect = Number[i];\nconst actual = src_1.default.clone(expect);\nchai_1.assert.equal(actual, expect);",
                   "err": {},
-                  "uuid": "3e93ce7c-cd01-4157-b524-837cb0aeb590",
-                  "parentUUID": "48f0d10d-dcd4-45e0-90d6-500176d1a547",
+                  "uuid": "0b3d70d3-0bf1-46a7-ba8c-800ebb04d3c5",
+                  "parentUUID": "54e84eac-73b2-4586-83ac-110f3acb81cc",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1707,7 +1707,7 @@
                   "title": "MIN_VALUE",
                   "fullTitle": "primitive number MIN_VALUE",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -1716,8 +1716,8 @@
                   "context": null,
                   "code": "const expect = Number[i];\nconst actual = src_1.default.clone(expect);\nchai_1.assert.equal(actual, expect);",
                   "err": {},
-                  "uuid": "705abec3-ee09-40ac-bbde-d667177c9c23",
-                  "parentUUID": "48f0d10d-dcd4-45e0-90d6-500176d1a547",
+                  "uuid": "4f4fabe8-1d63-4b38-8635-f35925680c65",
+                  "parentUUID": "54e84eac-73b2-4586-83ac-110f3acb81cc",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1734,8 +1734,8 @@
                   "context": null,
                   "code": "const expect = Number[i];\nconst actual = src_1.default.clone(expect);\nchai_1.assert.equal(actual, expect);",
                   "err": {},
-                  "uuid": "f01515fb-1368-4339-920f-0bb86e2e1c75",
-                  "parentUUID": "48f0d10d-dcd4-45e0-90d6-500176d1a547",
+                  "uuid": "5c6c2b5c-194a-469b-ac47-e31ee45f796d",
+                  "parentUUID": "54e84eac-73b2-4586-83ac-110f3acb81cc",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1752,29 +1752,29 @@
                   "context": null,
                   "code": "const expect = Number[i];\nconst actual = src_1.default.clone(expect);\nchai_1.assert.equal(actual, expect);",
                   "err": {},
-                  "uuid": "bd127d16-2038-4ec2-8fb8-3cae759992ba",
-                  "parentUUID": "48f0d10d-dcd4-45e0-90d6-500176d1a547",
+                  "uuid": "c1de2497-7d7b-4ec5-acf8-82a169c59bcd",
+                  "parentUUID": "54e84eac-73b2-4586-83ac-110f3acb81cc",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "fcece2eb-dbf0-4f59-b170-2cab38d5cc71",
-                "d237255a-8f2d-427e-9c4d-b9b4e9fe003c",
-                "cd266e11-2718-453b-aa3e-65888fd0540d",
-                "638817ff-4a8f-4a4c-a51b-68e43e569814",
-                "043cdc50-9aa6-4eee-ad96-b2f01a76d3c2",
-                "e5aeddb7-d756-40cd-9d54-651c429fa843",
-                "3e93ce7c-cd01-4157-b524-837cb0aeb590",
-                "705abec3-ee09-40ac-bbde-d667177c9c23",
-                "f01515fb-1368-4339-920f-0bb86e2e1c75",
-                "bd127d16-2038-4ec2-8fb8-3cae759992ba"
+                "a9cda65b-da1b-44ad-83e3-3d8a91d41f2d",
+                "31afcb6f-9e8a-44ea-8e01-2a91e1df0d27",
+                "6a09ba88-9dda-49ae-8812-21817097f5c3",
+                "314348fb-8a71-4644-8523-580c96db2041",
+                "7d526329-e3cc-4ca5-9557-19f1b2f01b4a",
+                "f8b5ebef-64a7-46c3-b40e-f53975e8e0cc",
+                "0b3d70d3-0bf1-46a7-ba8c-800ebb04d3c5",
+                "4f4fabe8-1d63-4b38-8635-f35925680c65",
+                "5c6c2b5c-194a-469b-ac47-e31ee45f796d",
+                "c1de2497-7d7b-4ec5-acf8-82a169c59bcd"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 0,
+              "duration": 4,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -1790,7 +1790,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "86595b95-dc69-4c43-8726-87700bb1d8dd",
+          "uuid": "ad1ceb37-592b-46f2-9ee5-5ab234e223fe",
           "title": "Stringify Options",
           "fullFile": "D:\\works\\ts-project\\rich-json\\test\\StringifyOptions.test.ts",
           "file": "\\test\\StringifyOptions.test.ts",
@@ -1810,8 +1810,8 @@
               "context": null,
               "code": "const obj = { a: 1, b: 5, c: { d: true, e: false } };\nconst pretty = 5;\nconst expect = JSON.stringify(obj, null, pretty);\nconst actual = src_1.default.stringify(obj, { pretty }).replace(/\\n {5}/g, '\\n');\nchai_1.assert.include(actual, expect);",
               "err": {},
-              "uuid": "92924120-2294-43ec-bf4d-2f4cc7d4fea7",
-              "parentUUID": "86595b95-dc69-4c43-8726-87700bb1d8dd",
+              "uuid": "1c2b9bda-8872-4bad-b94b-b08e239c2a43",
+              "parentUUID": "ad1ceb37-592b-46f2-9ee5-5ab234e223fe",
               "isHook": false,
               "skipped": false
             },
@@ -1819,7 +1819,7 @@
               "title": "excludKeys string",
               "fullTitle": "Stringify Options excludKeys string",
               "timedOut": false,
-              "duration": 0,
+              "duration": 1,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -1828,8 +1828,8 @@
               "context": null,
               "code": "const obj = { a: 1, b: 5, c: { d: true, e: false } };\nconst expect = { a: 1, c: { d: true } };\nconst actual = src_1.default.clone(obj, { excludKeys: ['b', 'e'] });\nchai_1.assert.deepEqual(actual, expect);",
               "err": {},
-              "uuid": "bc64f859-7fc9-4670-b40c-dffa63570082",
-              "parentUUID": "86595b95-dc69-4c43-8726-87700bb1d8dd",
+              "uuid": "0ccae19e-694b-4a1f-aa68-1b4c71f66d01",
+              "parentUUID": "ad1ceb37-592b-46f2-9ee5-5ab234e223fe",
               "isHook": false,
               "skipped": false
             },
@@ -1846,8 +1846,8 @@
               "context": null,
               "code": "const obj = { a: 1, b: 5, c: { d: true, e: false } };\nconst expect = { a: 1, c: { d: true } };\nconst actual = src_1.default.clone(obj, { excludKeys: /^b|e$/ });\nchai_1.assert.deepEqual(actual, expect);",
               "err": {},
-              "uuid": "88508aa2-f71e-4002-99d7-a21854e61350",
-              "parentUUID": "86595b95-dc69-4c43-8726-87700bb1d8dd",
+              "uuid": "b2cbb79e-4aff-4f23-bc4a-0afe3a6922fe",
+              "parentUUID": "ad1ceb37-592b-46f2-9ee5-5ab234e223fe",
               "isHook": false,
               "skipped": false
             },
@@ -1864,23 +1864,23 @@
               "context": null,
               "code": "const obj = { a: 1, b: 5, c: { d: true, e: false } };\nconst expect = { c: { d: true } };\nconst actual = src_1.default.clone(obj, { excludKeys: ['a', /^b|e$/] });\nchai_1.assert.deepEqual(actual, expect);",
               "err": {},
-              "uuid": "4fdfe54b-f560-4757-b743-b2590293f5fa",
-              "parentUUID": "86595b95-dc69-4c43-8726-87700bb1d8dd",
+              "uuid": "ac434544-6a16-4e8e-9b2e-3fad66f4c880",
+              "parentUUID": "ad1ceb37-592b-46f2-9ee5-5ab234e223fe",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "92924120-2294-43ec-bf4d-2f4cc7d4fea7",
-            "bc64f859-7fc9-4670-b40c-dffa63570082",
-            "88508aa2-f71e-4002-99d7-a21854e61350",
-            "4fdfe54b-f560-4757-b743-b2590293f5fa"
+            "1c2b9bda-8872-4bad-b94b-b08e239c2a43",
+            "0ccae19e-694b-4a1f-aa68-1b4c71f66d01",
+            "b2cbb79e-4aff-4f23-bc4a-0afe3a6922fe",
+            "ac434544-6a16-4e8e-9b2e-3fad66f4c880"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1,
+          "duration": 2,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
