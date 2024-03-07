@@ -5,7 +5,7 @@ import RichJson from '../src';
 
 describe('complex', () => {
   class MyClass {
-    ref: object;
+    public ref?: object;
     private constructor(public data: string) { }
     public static create(data: string, ref?: object) {
       const inst = new MyClass(data);
@@ -26,20 +26,20 @@ describe('complex', () => {
     g: obj2,
     h: buffer,
     circle: {
-      root: null,
-      circle: null,
+      root: null as any,
+      circle: null as any,
     },
     i: new Set([ obj2 ]),
     $ref: {
-      c: null,
-      d: null,
-      e: null as Set<any>,
-      f: null as Map<any, any>,
-      g0: null as MyClass,
+      c: null as any,
+      d: null as any,
+      e: null as Set<any> | null,
+      f: null as Map<any, any> | null,
+      g0: null as MyClass | null,
       g: new Set([ obj2 ]),
       gg: new Map<any, any>([[ obj2, 0 ], [ 1, obj2 ]]),
       h: buffer,
-      i: null as Set<any>,
+      i: null as Set<any> | null,
     },
   };
   expect.circle.root = expect;
@@ -56,13 +56,13 @@ describe('complex', () => {
 
   beforeEach(() => {
     RichJson.resetCustomerSerializers();
-    
+
     RichJson.addCustomerSerializer({
       className: 'abc',
       class: MyClass,
-      toContent: value => ({ 
-        abc: value.data, 
-        xyz: value.ref, 
+      toContent: value => ({
+        abc: value.data,
+        xyz: value.ref,
       }),
       fromContent: ({ abc, xyz }) => {
         return MyClass.create(abc, xyz);
@@ -92,7 +92,7 @@ describe('complex', () => {
     });
     it('member of Set #1', () => {
       assert.strictEqual(actual.$ref.e, actual.e);
-      const value = Array.from(actual.$ref.e)[0];
+      const value = Array.from(actual.$ref.e!)[0];
       assert.strictEqual(value, actual.d);
     });
     it('member of Set #2', () => {
@@ -102,10 +102,10 @@ describe('complex', () => {
     it('member of Map #1', () => {
       assert.strictEqual(actual.$ref.f, actual.f);
 
-      const key = Array.from(actual.$ref.f.entries())[0][0];
+      const key = Array.from(actual.$ref.f!.entries())[0][0];
       assert.strictEqual(key, actual.d);
 
-      const value = Array.from(actual.$ref.f.entries())[1][1];
+      const value = Array.from(actual.$ref.f!.entries())[1][1];
       assert.strictEqual(value, actual.d);
     });
     it('member of Map #2', () => {
@@ -125,12 +125,12 @@ describe('complex', () => {
       assert.notStrictEqual(actual.$ref.g0, obj2);
     });
     it('class #2', () => {
-      assert.strictEqual(actual.$ref.g0.ref, actual.d);
-      assert.notStrictEqual(actual.$ref.g0.ref, obj2);
+      assert.strictEqual(actual.$ref.g0!.ref, actual.d);
+      assert.notStrictEqual(actual.$ref.g0!.ref, obj2);
     });
     it('class #3 - in Set', () => {
       assert.strictEqual(actual.$ref.i, actual.i);
-      const value = Array.from(actual.$ref.i)[0] as MyClass;
+      const value = Array.from(actual.$ref.i!)[0] as MyClass;
       assert.strictEqual(value, actual.g);
       assert.strictEqual(value.ref, actual.d);
     });

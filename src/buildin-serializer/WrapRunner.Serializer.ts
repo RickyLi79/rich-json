@@ -1,4 +1,4 @@
-import { type CustomerSerializer, createCustomerSerializer } from '../lib';
+import { createCustomerSerializer, type CustomerSerializer } from '../lib';
 type ThisOfFunc<T extends (...args: any) => any> = T extends (this: infer THIS, ...args: any[]) => any ? THIS : never;
 export class WrapRunner<Func extends (...args: any) => any> {
 
@@ -8,7 +8,7 @@ export class WrapRunner<Func extends (...args: any) => any> {
     this.args = args;
   }
 
-  run<Return extends ReturnType<Func>>(THIS: ThisOfFunc<Func> = null): Return {
+  run<Return extends ReturnType<Func>>(THIS: ThisOfFunc<Func> | null = null): Return {
     return this.func.apply(THIS, this.args);
   }
 

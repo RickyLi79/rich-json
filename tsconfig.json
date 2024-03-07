@@ -5,6 +5,7 @@
     "emit": true,
   },
   "compilerOptions": {
+    "strict": true,
     "noEmit": true,
     "composite": false,
     "downlevelIteration": false,

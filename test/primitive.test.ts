@@ -63,7 +63,7 @@ describe('primitive', () => {
       assert.deepEqual(actual, expect);
       assert.notDeepEqual(actual, 0);
     });
-    const numberStaticsKeys = [ 'EPSILON', 'MAX_SAFE_INTEGER', 'MAX_VALUE', 'MIN_SAFE_INTEGER', 'MIN_VALUE', 'NEGATIVE_INFINITY', 'POSITIVE_INFINITY' ]; 
+    const numberStaticsKeys: (keyof NumberConstructor)[] = [ 'EPSILON', 'MAX_SAFE_INTEGER', 'MAX_VALUE', 'MIN_SAFE_INTEGER', 'MIN_VALUE', 'NEGATIVE_INFINITY', 'POSITIVE_INFINITY' ]; 
     for (const i of numberStaticsKeys) {
       if (typeof Number[i] !== 'number') continue;
       if (i === 'NaN') continue;

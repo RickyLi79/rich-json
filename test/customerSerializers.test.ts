@@ -80,31 +80,31 @@ describe('customerSerializers', () => {
     assert.doesNotThrow(() => {
       RichJson.addCustomerSerializer({
         class: Clz,
-        fromContent: null,
-        toContent: null,
+        fromContent: null!,
+        toContent: null!,
       });
     });
     assert.Throw(() => {
       RichJson.addCustomerSerializer({
         class: Clz,
-        fromContent: null,
-        toContent: null,
+        fromContent: null!,
+        toContent: null!,
       });
     });
     assert.Throw(() => {
       RichJson.addCustomerSerializer({
         className: 'Clz',
-        class: null,
-        fromContent: null,
-        toContent: null,
+        class: null!,
+        fromContent: null!,
+        toContent: null!,
       });
     });
     assert.doesNotThrow(() => {
       RichJson.addCustomerSerializer({
         className: 'Clz2',
         class: Clz,
-        fromContent: null,
-        toContent: null,
+        fromContent: null!,
+        toContent: null!,
       });
     });
   });

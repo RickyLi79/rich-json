@@ -1,4 +1,5 @@
-import { type CustomerSerializer, createCustomerSerializer } from '../lib';
+/* eslint-disable no-eval */
+import { createCustomerSerializer, type CustomerSerializer } from '../lib';
 
 
 export class FunctionSerializer {

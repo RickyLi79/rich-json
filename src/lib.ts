@@ -1,5 +1,6 @@
 import type { SetOptional } from 'type-fest';
 import { BigIntSerializer } from './buildin-serializer/BigInt.Serializer';
+import { BufferSerializer } from './buildin-serializer/Buffer.Serializer';
 import { DateSerializer } from './buildin-serializer/Date.Serializer';
 import { ErrorSerializer } from './buildin-serializer/Error.Serializer';
 import { FunctionSerializer } from './buildin-serializer/Function.Serializer';
@@ -9,7 +10,11 @@ import { RegExpSerializer } from './buildin-serializer/RegExp.Serializer';
 import { SetSerializer } from './buildin-serializer/Set.Serializer';
 import { URLSerializer } from './buildin-serializer/URL.Serializer';
 import { WrapRunnerSerializer } from './buildin-serializer/WrapRunner.Serializer';
-import { BufferSerializer } from './buildin-serializer/Buffer.Serializer';
+
+export function simEval(code:string) {
+  // eslint-disable-next-line no-new-func
+  return new Function(`return ${code}`)();
+}
 
 function getIsNodejs() {
   return (typeof process !== 'undefined')
@@ -71,7 +76,7 @@ export function isNativeProperty(value: any, nativeKeys: NativeKeys): boolean {
   if (nativeKeys.mark && !keys.every(i => nativeKeys.all.includes(i))) return false;
   return true;
 }
-export function calMarkId(value: object, nativeKeys: NativeKeys, usedMark: string[]) {
+export function calMarkId(value: Record<string, any>, nativeKeys: NativeKeys, usedMark: string[]) {
   if (!isNativeProperty(value, nativeKeys)) return;
   const keys = Object.keys(value);
   const [ extraKey ] = keys.filter(i => !nativeKeys.all.includes(i));
@@ -102,31 +107,6 @@ export type SerializeConfig = {
   Buffer: boolean,
 };
 
-const defaultSerializerInit: SerializeConfig = {
-  Date: true,
-  Function: true,
-  RegExp: true,
-  Set: true,
-  Map: true,
-  Buffer: true,
-};
-
-export const serializer: SerializeConfig = { ...defaultSerializerInit };
-
-
-export function setSerializers(serializer: Partial<SerializeConfig>) {
-  for (const i in serializer) {
-    if (i in serializer) {
-      serializer[i] = !!serializer[i];
-    }
-  }
-  return serializer;
-}
-
-export function resetSerializer() {
-  return setSerializers(defaultSerializerInit);
-}
-
 export function getBuildinSerializers(): CustomerSerializer<ClassSpy, any>[] {
   return [
     BigIntSerializer.getInstance(),
@@ -155,9 +135,11 @@ export function createCustomerSerializer<T extends ClassSpy, TContent = any>(par
     class: pars.class,
     fromContent: pars.fromContent,
     toContent: pars.toContent,
-    isType: pars.isType ?? function(clz: T, value: any): value is T {
-      return value instanceof clz;
-    }.bind(null, pars.class),
+    isType: pars.isType ?? ((clz: T) => {
+      return (value: any):value is InstanceTypeSpy<T> => {
+        return value instanceof clz;
+      };
+    })(pars.class),
     serializContent: pars.serializContent ?? true,
   };
 }

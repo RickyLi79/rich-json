@@ -1,7 +1,7 @@
-import { stringify, type StringifyOptions } from './serialize';
-import { parse } from './deserialize';
-import { addCustomerSerializer, resetCustomerSerializers, isNodeJs, isBrowser } from './lib';
 import { WrapRunner } from './buildin-serializer/WrapRunner.Serializer';
+import { parse } from './deserialize';
+import { addCustomerSerializer, isBrowser, isNodeJs, resetCustomerSerializers } from './lib';
+import { stringify, type StringifyOptions } from './serialize';
 
 const clone = function <T>(obj: T, options?:StringifyOptions): T {
   const text = stringify(obj, options);

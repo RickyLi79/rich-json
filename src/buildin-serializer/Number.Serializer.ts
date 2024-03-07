@@ -1,8 +1,8 @@
-import { type CustomerSerializer, createCustomerSerializer } from '../lib';
+import { createCustomerSerializer, type CustomerSerializer } from '../lib';
 
-const NumberStaticsKeys = [ 'EPSILON', 'MAX_SAFE_INTEGER', 'MAX_VALUE', 'MIN_SAFE_INTEGER', 'MIN_VALUE', 'NEGATIVE_INFINITY', 'POSITIVE_INFINITY' ]; 
+const NumberStaticsKeys: (keyof NumberConstructor)[] = [ 'EPSILON', 'MAX_SAFE_INTEGER', 'MAX_VALUE', 'MIN_SAFE_INTEGER', 'MIN_VALUE', 'NEGATIVE_INFINITY', 'POSITIVE_INFINITY' ];
 export class NumberSerializer {
-  private static instance:CustomerSerializer<typeof Number, string|number>;
+  private static instance: CustomerSerializer<typeof Number, keyof NumberConstructor | '-0' | number>;
   public static getInstance() {
     if (this.instance === undefined) {
       this.instance = createCustomerSerializer({
@@ -16,7 +16,7 @@ export class NumberSerializer {
             return '-0';
           }
           for (const i of NumberStaticsKeys) {
-            const n:number = Number[i];
+            const n = Number[i];
             if (v === n) {
               return i;
             }
@@ -26,11 +26,11 @@ export class NumberSerializer {
         },
         fromContent(content) {
           if (content === '-0') return -0;
-          return Number[content];
+          return Number[content as any as keyof NumberConstructor] as any;
         },
         serializContent: false,
       });
-      
+
     }
     return this.instance;
   }

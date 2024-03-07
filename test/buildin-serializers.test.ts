@@ -53,12 +53,12 @@ describe('buildin serializers', () => {
       try {
         ({} as any).a.b.c = 1;
       } catch (e) {
-        expect = e;
+        expect = e as Error;
       }
-      const actual = RichJson.clone(expect);
-      assert.deepEqual(actual.name, expect.name);
-      assert.deepEqual(actual.message, expect.message);
-      assert.notStrictEqual(actual, expect);
+      const actual = RichJson.clone(expect!);
+      assert.deepEqual(actual.name, expect!.name);
+      assert.deepEqual(actual.message, expect!.message);
+      assert.notStrictEqual(actual, expect!);
       assert.instanceOf(actual, TypeError);
     });
   });
@@ -147,14 +147,14 @@ describe('buildin serializers', () => {
       assert.instanceOf(actual, Function);
     });
     it('plain #3', () => {
-      const expect = a => a;
+      const expect = (a: any) => a;
       const actual = RichJson.clone(expect);
       assert.deepEqual(actual.toString(), expect.toString());
       assert.notStrictEqual(actual, expect);
       assert.instanceOf(actual, Function);
     });
     it('plain #3 async', () => {
-      const expect = async a => a;
+      const expect = async (a: any) => a;
       const actual = RichJson.clone(expect);
       assert.deepEqual(actual.toString(), expect.toString());
       assert.notStrictEqual(actual, expect);
@@ -189,14 +189,14 @@ describe('buildin serializers', () => {
       assert.instanceOf(actual.a, Function);
     });
     it('obj #3', () => {
-      const expect = { a: a => a };
+      const expect = { a: (a: any) => a };
       const actual = RichJson.clone(expect);
       assert.deepEqual(actual.a.toString(), expect.a.toString());
       assert.notStrictEqual(actual.a, expect.a);
       assert.instanceOf(actual.a, Function);
     });
     it('obj #3 async', () => {
-      const expect = { a: async a => a };
+      const expect = { a: async (a: any) => a };
       const actual = RichJson.clone(expect);
       assert.deepEqual(actual.a.toString(), expect.a.toString());
       assert.notStrictEqual(actual.a, expect.a);
@@ -292,7 +292,6 @@ describe('buildin serializers', () => {
       assert.deepEqual(await called, 3);
     });
     it('plain #2 whih `this`', () => {
-        
       function add(this:number, a:number, b:number) {
         return (this ?? 0) + a + b;
       }
@@ -304,7 +303,6 @@ describe('buildin serializers', () => {
       assert.deepEqual(actual.run(), 3);
       assert.deepEqual(actual.run(5), 8);
       assert.deepEqual(actual.run(-1), 2);
-      // assert.deepEqual(actual.call('0'), '012');
     });
   });
 

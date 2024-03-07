@@ -1,4 +1,4 @@
-import { type CustomerSerializer, createCustomerSerializer } from '../lib';
+import { createCustomerSerializer, type CustomerSerializer } from '../lib';
 
 
 export class MapSerializer {

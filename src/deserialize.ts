@@ -1,11 +1,11 @@
 import jsonpath from 'jsonpath';
-import { type ClassSpy, type CustomerSerializer, type NativeKeys, getBuildinSerializers, getNativeKeys, isNativeProperty, isNodeJs, customerSerializers } from './lib';
+import { customerSerializers, getBuildinSerializers, getNativeKeys, isNativeProperty, type ClassSpy, type CustomerSerializer, type NativeKeys } from './lib';
 type RichTypes = 'Class' | '$ref';
 const refMap: Map<any, any> = new Map();
 
-let buildinSerializers:CustomerSerializer<ClassSpy, any>[];
+let buildinSerializers: CustomerSerializer<ClassSpy, any>[];
 
-function getRichlValue(value: any, nativeKeys: NativeKeys): { type:RichTypes, className:string, content:any } {
+function getRichlValue(value: any, nativeKeys: NativeKeys): { type: RichTypes, className: string, content: any } {
   return {
     type: value[nativeKeys.type],
     className: value[nativeKeys.className],
@@ -29,13 +29,13 @@ function fromRich(value: any, root: any, nativeKeys: NativeKeys): any {
             refObj = root;
             jp.shift();
             while (jp.length !== 0) {
-              refObj = jsonpath.value(refObj, jsonpath.stringify([ '$', jp.shift() ]));
+              refObj = jsonpath.value(refObj, jsonpath.stringify([ '$', jp.shift()! ]));
               if (refObj instanceof Map) {
-                const v = jp.pop();
-                const k = jp.pop();
+                const v = jp.pop() as any as number;
+                const k = jp.pop() as any as number;
                 refObj = Array.from(refObj.entries())[k][v];
               } else if (refObj instanceof Set) {
-                const i = jp.pop();
+                const i = jp.pop() as any as number;
                 refObj = Array.from(refObj)[i];
               }
             }
@@ -66,16 +66,16 @@ function fromRich(value: any, root: any, nativeKeys: NativeKeys): any {
 }
 
 export function parse<T>(text: string): T {
-  
+
   buildinSerializers = getBuildinSerializers();
   try {
-    if (text === undefined) return undefined;
+    if (text === undefined) return undefined!;
     let wrap: {
       MARK: string,
       SP: string,
       root: any,
     };
-    let nativeKeys:NativeKeys;
+    let nativeKeys: NativeKeys;
     refMap.clear();
     const re = JSON.parse(text, function(this: any, key, value) {
       if (wrap === undefined) {

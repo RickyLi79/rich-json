@@ -1,4 +1,4 @@
-import { type ClassSpy, type InstanceTypeSpy, type CustomerSerializer, serializer, isNodeJs, customerSerializers, getNativeKeys, calMarkId, getMarkKey, type NativeKeys, getBuildinSerializers, isBrowser } from './lib';
+import { calMarkId, customerSerializers, getBuildinSerializers, getMarkKey, getNativeKeys, isBrowser, isNodeJs, type ClassSpy, type CustomerSerializer, type InstanceTypeSpy, type NativeKeys } from './lib';
 
 type RichJson<Type extends RichTypes, Content = any> = {
   raw: any,
@@ -22,12 +22,13 @@ let usedMark: string[];
 let buildinSerializers: CustomerSerializer<ClassSpy, any>[];
 
 type RichTypes = 'Class' | '$ref';
+
 function createRichValue<Type extends RichTypes, Content = any>(s: RichJson<Type, Content>): any {
-  if (typeof s.content === 'object') {
+  if (s.content !== null && typeof s.content === 'object') {
     if (s.serializContent) {
-      s.content[MARK] = s.raw;
+      (s.content as Record<symbol, any>)[MARK] = s.raw;
     } else {
-      s.content[IGNORE] = s.raw;
+      (s.content as Record<symbol, any>)[IGNORE] = s.raw;
     }
   }
   return {
@@ -167,13 +168,13 @@ export function stringify(value: any, options?: StringifyOptions): string {
       if (Object.is(value, root)) {
         fullpath = [ '$' ];
       } else if (!hasMark && !this[IGNORE]) {
-        const parentJp = map.get(this[MARK] ?? this);
+        const parentJp = map.get(this[MARK] ?? this)!;
         fullpath = [ ...parentJp, key ];
       }
       if (!hasMark && map.has(value)) {
-        return toRichRef(map.get(value));
+        return toRichRef(map.get(value)!);
       }
-      return nativeReplacer.call(this, key, value, map, fullpath);
+      return nativeReplacer.call(this, key, value, map, fullpath!);
     }, pretty);
 
     for (const [ clazz, toJSON ] of toJsonMap.entries()) {
