@@ -1,4 +1,4 @@
-import { type CustomerSerializer, createCustomerSerializer } from '../lib';
+import { createCustomerSerializer, simEval, type CustomerSerializer } from '../lib';
 
 
 export class ErrorSerializer {
@@ -11,7 +11,7 @@ export class ErrorSerializer {
           return [ value.name, value.message ];
         },
         fromContent([ name, message ]) {
-          const err: Error = eval(`new ${name}()`);
+          const err: Error = simEval(`new ${name}()`);
           err.message = message;
           return err;
         },

@@ -1,4 +1,4 @@
-import { type CustomerSerializer, createCustomerSerializer, isNodeJs } from '../lib';
+import { createCustomerSerializer, isNodeJs, simEval, type CustomerSerializer } from '../lib';
 
 
 export class BufferSerializer {
@@ -23,7 +23,8 @@ export class BufferSerializer {
           return isBuffer;
         },
         toContent(value) {
-          return [ value.valueOf().constructor.name, String.fromCharCode.apply(null, value.valueOf()) ];
+          const v = value.valueOf() as ArrayBuffer;
+          return [ v.constructor.name, String.fromCharCode.apply(null, v as any) ];
         },
         fromContent([ className, content ]) {
           let buffer: any;
@@ -31,10 +32,10 @@ export class BufferSerializer {
             if (isNodeJs) {
               buffer = Buffer.from(content);
             } else {
-              buffer = new Uint8Array(content);
+              buffer = new Uint8Array(content as any);
             }
           } else {
-            buffer = new (eval(className) as any)(new TextEncoder().encode(content));
+            buffer = new (simEval(className) as any)(new TextEncoder().encode(content));
           }
           return buffer;
         },
