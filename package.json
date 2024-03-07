@@ -11,11 +11,11 @@
   "main": "bin/index.js",
   "scripts": {
     "test": "mocha -r ts-node/register --reporter spec --colors test/**/*.test.ts",
-    "mochawesome": "mocha -r ts-node/register --reporter mochawesome --reporter-options reportDir=docs,reportTitle=Rich-JSON-1.1.1,reportPageTitle=Rich-JSON-report,reportFilename=index --colors test/**/*.test.ts",
+    "mochawesome": "mocha -r ts-node/register --config \"./test/.mocharc.js\"",
     "build": "tsc -p tsconfig/tsconfig.build.json",
     "--": "",
     "preversion": "npm run test",
-    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md ./doc && git commit -m \"%s\"",
     "prepublishOnly": "npm run mochawesome && npm run build"
   },
   "keywords": [
