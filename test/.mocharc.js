@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require('node:path');
 const { name, version } = require(path.resolve(process.cwd(), 'package.json'));
 
 module.exports = {

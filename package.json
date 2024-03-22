@@ -12,7 +12,7 @@
   "scripts": {
     "test": "mocha -r ts-node/register --reporter spec --colors test/**/*.test.ts",
     "mochawesome": "mocha -r ts-node/register --config \"./test/.mocharc.js\"",
-    "build": "tsc -p tsconfig/tsconfig.build.json",
+    "build": "tsc -p tsconfig.build.json",
     "--": "",
     "preversion": "npm run mochawesome",
     "postversion": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md docs package.json package-lock.json",
