@@ -1,4 +1,4 @@
-import { calMarkId, customerSerializers, getBuildinSerializers, getMarkKey, getNativeKeys, isBrowser, isNodeJs, type ClassSpy, type CustomerSerializer, type InstanceTypeSpy, type NativeKeys } from './lib';
+import { calMarkId, customerSerializers, getBuildinSerializers, getMarkKey, getNativeKeys, isNodeJs, type ClassSpy, type CustomerSerializer, type InstanceTypeSpy, type NativeKeys } from './lib';
 
 type RichJson<Type extends RichTypes, Content = any> = {
   raw: any,
@@ -38,16 +38,6 @@ function createRichValue<Type extends RichTypes, Content = any>(s: RichJson<Type
     [nativeKeys.className]: s.className,
     [nativeKeys.content]: s.content,
   };
-}
-
-function randomUUID() {
-  if (isNodeJs) {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const crypto:Crypto = require('crypto');
-    return crypto.randomUUID();
-  } else if (isBrowser) {
-    return crypto.randomUUID();
-  }
 }
 
 function isNativeProperty(value: any): boolean {
@@ -114,7 +104,7 @@ export function stringify(value: any, options?: StringifyOptions): string {
   const root = value;
   const map: Map<any, string[]> = new Map();
   const toJsonMap: Map<{ prototype: { toJSON: any } }, any> = new Map();
-  NATIVE_MARK = '-MARK-' + Math.random() + Date.now() + randomUUID();
+  NATIVE_MARK = '-MARK-' + Math.random() + Date.now() + Math.random();
   const SP = '#';
   nativeKeys = getNativeKeys(SP);
   usedMark = [];
